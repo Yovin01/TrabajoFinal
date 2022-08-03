@@ -11,4 +11,5 @@ package modelo.enums;
  */
 public enum TipoEmpleado {
     PROFESOR,GERENTE;
+    
 }
