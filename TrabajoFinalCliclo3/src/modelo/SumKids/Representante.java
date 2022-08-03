@@ -13,7 +13,6 @@ import modelo.SumKids.Persona;
 public class Representante extends Persona {
 
     private String correo;
-    private String celular;
     private Integer id_representante;
 
     public Representante() {
@@ -21,7 +20,6 @@ public class Representante extends Persona {
 
     public Representante(String correo, String celular) {
         this.correo = correo;
-        this.celular = celular;
     }
 
     public Integer getId_representante() {
@@ -40,12 +38,5 @@ public class Representante extends Persona {
         this.correo = correo;
     }
 
-    public String getCelular() {
-        return celular;
-    }
-
-    public void setCelular(String celular) {
-        this.celular = celular;
-    }
 
 }
