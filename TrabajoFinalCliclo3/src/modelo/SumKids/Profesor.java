@@ -10,6 +10,7 @@ import modelo.enums.TipoEmpleado;
 /**
  *
  * @author User
+ 
  */
 public class Profesor extends Empleado {
     private String especialidad;
