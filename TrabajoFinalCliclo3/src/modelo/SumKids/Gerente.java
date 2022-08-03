@@ -4,10 +4,16 @@
  */
 package modelo.SumKids;
 
+import modelo.enums.TipoEmpleado;
+
 /**
  *
  * @author Jordy torres
  */
 public class Gerente extends Empleado{
+
+    public Gerente(TipoEmpleado cargo, Integer id_empleado, String correo, String apellidos, String nombres, String identificacion, String celular, String direccion) {
+        super(cargo, id_empleado, correo, apellidos, nombres, identificacion, celular, direccion);
+    }
        
 }

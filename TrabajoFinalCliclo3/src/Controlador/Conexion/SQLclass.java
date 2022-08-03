@@ -4,23 +4,28 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 /**
  *
- * @author KBGR55/Hilary-Madelein/Thaisncp/AdrianArtz/ronaldcuenca19
+ * @author jordy
  */
 public class SQLclass {
-
+   private static final String user = "SUNKIDS";
+    private static final String pass = "sunkids";
+    
     public SQLclass() {
     }
-    
-    public static Connection conn(){
+     
+    public Connection conn(){
+         boolean con ;
         try {
+            Class.forName("oracle.jdbc.driver.OracleDriver");
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-            System.out.println("connection to data base");
-            Connection connection= DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "SYSTEM", "jordytorres");
+            System.out.println("Conectando a la base de datos.....");
+          Connection connection= DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", user,pass);  
+          
             System.out.println("CONEXION EXITOSA");
             return connection;
             
         } catch (Exception e) {
-            System.out.println("MALA CONEXION: "+e);
+            System.out.println("Fallo de conexion error!: "+e);
             return null;
         }
     }
