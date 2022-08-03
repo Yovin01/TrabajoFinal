@@ -15,10 +15,8 @@ import java.util.logging.Logger;
  * @author Jordy
  */
 public class OracleTest {
-       private static final String user = "";
-    private static final String pass = "jordy";
-      public static void main(String[] args) {
-            
+
+      public static void main(String[] args) {         
                SQLclass s = new SQLclass();
                s.conn();
       } 
