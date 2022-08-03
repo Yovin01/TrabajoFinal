@@ -144,11 +144,11 @@ public class FrmIngreso extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-<<<<<<< HEAD
+
     private javax.swing.JButton jButton1;
-=======
+
  private javax.swing.JButton jButton1;
->>>>>>> fdd4e5f21af9748abab222684479731fa1be789b
+
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPasswordField jPasswordField1;
