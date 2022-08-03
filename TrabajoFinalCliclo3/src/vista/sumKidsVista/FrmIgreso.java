@@ -38,11 +38,19 @@ public class FrmIgreso extends javax.swing.JFrame {
 
         jPanel1.setLayout(null);
         jPanel1.add(jpscontraseña);
+<<<<<<< HEAD
         jpscontraseña.setBounds(110, 120, 90, 22);
 
         jLabel3.setText("LOGO");
         jPanel1.add(jLabel3);
         jLabel3.setBounds(99, 11, 54, 16);
+=======
+        jpscontraseña.setBounds(110, 120, 90, 20);
+
+        jLabel3.setText("LOGO");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(99, 11, 54, 14);
+>>>>>>> b1086554fcc5e1fe84a9e96ff2508d0fa39b2ab9
 
         btningresar.setText("Ingresar");
         btningresar.addActionListener(new java.awt.event.ActionListener() {
@@ -51,23 +59,41 @@ public class FrmIgreso extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btningresar);
+<<<<<<< HEAD
         btningresar.setBounds(70, 180, 54, 24);
+=======
+        btningresar.setBounds(70, 180, 73, 23);
+>>>>>>> b1086554fcc5e1fe84a9e96ff2508d0fa39b2ab9
         jPanel1.add(txtusuario);
         txtusuario.setBounds(110, 80, 90, 25);
 
         jLabel2.setText("Contraseña:");
         jPanel1.add(jLabel2);
+<<<<<<< HEAD
         jLabel2.setBounds(10, 120, 76, 16);
 
         jLabel1.setText("Usuario:");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(10, 90, 60, 16);
+=======
+        jLabel2.setBounds(10, 120, 76, 14);
+
+        jLabel1.setText("Usuario:");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(10, 90, 60, 14);
+>>>>>>> b1086554fcc5e1fe84a9e96ff2508d0fa39b2ab9
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)
+=======
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 10, Short.MAX_VALUE))
+>>>>>>> b1086554fcc5e1fe84a9e96ff2508d0fa39b2ab9
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
