@@ -6,8 +6,8 @@ package modelo.SumKids;
 
 /**
  *
- * @author Jordy
+ * @author Jordy torres
  */
-public class Gerente{
+public class Gerente extends Empleado{
        
 }
