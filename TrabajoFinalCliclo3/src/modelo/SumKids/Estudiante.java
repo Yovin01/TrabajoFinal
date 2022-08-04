@@ -28,6 +28,22 @@ public class Estudiante extends Persona{
         this.profesor = profesor;
     }
 
+    public Integer getId_representante() {
+        return id_representante;
+    }
+
+    public void setId_representante(Integer id_representante) {
+        this.id_representante = id_representante;
+    }
+
+    public Integer getId_estudiante() {
+        return id_estudiante;
+    }
+
+    public void setId_estudiante(Integer id_estudiante) {
+        this.id_estudiante = id_estudiante;
+    }
+
     public Integer getRepresentante() {
         return id_representante;
     }

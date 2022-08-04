@@ -22,7 +22,9 @@ public class Empleado extends Persona {
         this.id_empleado = id_empleado;
         this.correo = correo;
     }
-
+   public Empleado(){
+       
+   }
     public TipoEmpleado getCargo() {
         return cargo;
     }
