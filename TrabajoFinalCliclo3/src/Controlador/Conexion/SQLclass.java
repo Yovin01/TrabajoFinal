@@ -8,7 +8,7 @@ import java.sql.DriverManager;
  */
 public class SQLclass {
    private static final String user = "SUNKIDS";
-    private static final String pass = "sunkids";
+    private static final String password = "sunkids";
     
     public SQLclass() {
     }
@@ -19,7 +19,7 @@ public class SQLclass {
             Class.forName("oracle.jdbc.driver.OracleDriver");
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
             System.out.println("Conectando a la base de datos.....");
-          Connection connection= DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", user,pass);  
+          Connection connection= DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", user,password);  
             System.out.println("CONEXION EXITOSA");
             return connection;
         } catch (Exception e) {
