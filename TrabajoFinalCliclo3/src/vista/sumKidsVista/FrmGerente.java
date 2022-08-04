@@ -42,8 +42,11 @@ public class FrmGerente extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel1.setDoubleBuffered(false);
         jPanel1.setLayout(null);
 
+        jButton1.setBackground(new java.awt.Color(51, 102, 255));
         jButton1.setText("Rechazar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -53,6 +56,7 @@ public class FrmGerente extends javax.swing.JFrame {
         jPanel1.add(jButton1);
         jButton1.setBounds(150, 170, 100, 24);
 
+        botaprobar.setBackground(new java.awt.Color(255, 51, 51));
         botaprobar.setText("Aprobar");
         botaprobar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,7 +93,7 @@ public class FrmGerente extends javax.swing.JFrame {
         jScrollPane2.setBounds(20, 20, 500, 100);
 
         jPanel1.add(Paneltable2);
-        Paneltable2.setBounds(20, 210, 540, 140);
+        Paneltable2.setBounds(10, 210, 540, 140);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Lista Estudiantes"));
         jPanel2.setLayout(null);
@@ -111,7 +115,7 @@ public class FrmGerente extends javax.swing.JFrame {
         jScrollPane1.setBounds(30, 30, 470, 100);
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(30, 10, 530, 150);
+        jPanel2.setBounds(20, 10, 530, 150);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
