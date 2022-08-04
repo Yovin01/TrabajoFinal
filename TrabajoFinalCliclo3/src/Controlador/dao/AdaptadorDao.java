@@ -5,14 +5,15 @@
  */
 package controlador.dao;
 
+import controlador.conexion.SQLclass;
 import controlador.tda.lista.ListaEnlazada;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
-import controlador.Conexion;
-import Controlador.utilidades.Utilidades;
-import static Controlador.utilidades.Utilidades.getMethod;
+import controlador.utiles.Utilidades;
+import static controlador.utiles.Utilidades.getMethod;
+import controlador.tda.lista.ListaEnlazada;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
@@ -31,7 +32,7 @@ public class AdaptadorDao<T> implements InterfazDao<T> {
 
     public AdaptadorDao(Class clazz) {
         this.clazz = clazz;
-        this.conexion = Conexion.getConecction();
+        this.conexion = SQLclass.getConecction();
         ALL += clazz.getSimpleName().toLowerCase();
         ALL_ID += clazz.getSimpleName().toLowerCase() + " where id = ";
     }
@@ -39,6 +40,9 @@ public class AdaptadorDao<T> implements InterfazDao<T> {
     public Connection getConexion() {
         return conexion;
     }
+
+
+
 
     public Class getClazz() {
         return clazz;
@@ -48,7 +52,6 @@ public class AdaptadorDao<T> implements InterfazDao<T> {
     public ListaEnlazada<T> listar() {
         ListaEnlazada<T> lista = new ListaEnlazada<>();
         try {
-
             PreparedStatement stmt = getConexion().prepareStatement(ALL);
             ResultSet resultSet = stmt.executeQuery();
             ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
