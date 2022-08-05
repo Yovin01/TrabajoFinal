@@ -3,14 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/USUARIO/TrabajoFinal/TrabajoFinalCliclo3/src/modelo/SumKids/Persona.java</file>
-            <file>file:/C:/Users/USUARIO/TrabajoFinal/TrabajoFinalCliclo3/src/modelo/SumKids/Estudiante.java</file>
-            <file>file:/C:/Users/USUARIO/TrabajoFinal/TrabajoFinalCliclo3/src/modelo/SumKids/Representante.java</file>
-            <file>file:/C:/Users/USUARIO/TrabajoFinal/TrabajoFinalCliclo3/src/modelo/SumKids/Empleado.java</file>
-            <file>file:/C:/Users/USUARIO/TrabajoFinal/TrabajoFinalCliclo3/src/vista/sumKidsVista/FrmIngreso.java</file>
-            <file>file:/C:/Users/USUARIO/TrabajoFinal/TrabajoFinalCliclo3/src/modelo/SumKids/Profesor.java</file>
-            <file>file:/C:/Users/USUARIO/TrabajoFinal/TrabajoFinalCliclo3/src/modelo/enums/TipoEmpleado.java</file>
-            <file>file:/C:/Users/USUARIO/TrabajoFinal/TrabajoFinalCliclo3/src/vista/sumKidsVista/FrmSecretaria.java</file>
+            <file>file:/C:/Users/USUARIO/TrabajoFinal/TrabajoFinalCliclo3/TrabajoFinal/TrabajoFinalCliclo3/src/modelo/enums/TipoEmpleado.java</file>
+            <file>file:/C:/Users/USUARIO/TrabajoFinal/TrabajoFinalCliclo3/TrabajoFinal/TrabajoFinalCliclo3/src/modelo/enums/estadoMatricula.java</file>
+            <file>file:/C:/Users/USUARIO/TrabajoFinal/TrabajoFinalCliclo3/TrabajoFinal/TrabajoFinalCliclo3/src/Controlador/dao/AdaptadorDao.java</file>
         </group>
     </open-files>
 </project-private>

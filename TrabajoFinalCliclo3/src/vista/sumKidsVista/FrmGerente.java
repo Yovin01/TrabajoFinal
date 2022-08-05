@@ -18,6 +18,7 @@ public class FrmGerente extends javax.swing.JFrame {
     public FrmGerente() {
         
         initComponents();
+        this.setLocationRelativeTo(null);
       this.Paneltable2.setVisible(false);
     }
 
@@ -39,10 +40,11 @@ public class FrmGerente extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
         jPanel1.setDoubleBuffered(false);
         jPanel1.setLayout(null);
 
@@ -54,7 +56,7 @@ public class FrmGerente extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(150, 170, 100, 24);
+        jButton1.setBounds(150, 190, 100, 23);
 
         botaprobar.setBackground(new java.awt.Color(255, 51, 51));
         botaprobar.setText("Aprobar");
@@ -64,9 +66,10 @@ public class FrmGerente extends javax.swing.JFrame {
             }
         });
         jPanel1.add(botaprobar);
-        botaprobar.setBounds(30, 170, 90, 24);
+        botaprobar.setBounds(30, 190, 90, 23);
 
-        Paneltable2.setBorder(javax.swing.BorderFactory.createTitledBorder("Estado estudiante"));
+        Paneltable2.setBackground(new java.awt.Color(204, 255, 255));
+        Paneltable2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3), "Lista Estudiantes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
         Paneltable2.setLayout(null);
 
         tablaAprobacion.setModel(new javax.swing.table.DefaultTableModel(
@@ -93,9 +96,10 @@ public class FrmGerente extends javax.swing.JFrame {
         jScrollPane2.setBounds(20, 20, 500, 100);
 
         jPanel1.add(Paneltable2);
-        Paneltable2.setBounds(10, 210, 540, 140);
+        Paneltable2.setBounds(20, 220, 540, 140);
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Lista Estudiantes"));
+        jPanel2.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3), "Lista Estudiantes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
         jPanel2.setLayout(null);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -115,17 +119,24 @@ public class FrmGerente extends javax.swing.JFrame {
         jScrollPane1.setBounds(30, 30, 470, 100);
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(20, 10, 530, 150);
+        jPanel2.setBounds(20, 20, 530, 150);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/fondosd.jpg"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(0, 0, 580, 380);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 564, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 581, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 361, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -183,6 +194,7 @@ public class FrmGerente extends javax.swing.JFrame {
     private javax.swing.JPanel Paneltable2;
     private javax.swing.JButton botaprobar;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
