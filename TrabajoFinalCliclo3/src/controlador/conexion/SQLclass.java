@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package Controlador.Conexion;
+=======
+package controlador.conexion;
+>>>>>>> de13da8fab3f89909930f5209f2c3d7d923984d9
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,11 +14,24 @@ public class SQLclass {
    private static final String user = "SUNKIDS";
     private static final String password = "sunkids";
     
+<<<<<<< HEAD
     public SQLclass() {
     }
      
     public Connection conn(){
         
+=======
+   public static Connection conecction;
+public SQLclass() {
+    }
+    public static Connection getConecction() {
+        if(conecction == null)
+            conn();
+        return conecction;
+    }    
+       
+     public static Connection conn(){
+>>>>>>> de13da8fab3f89909930f5209f2c3d7d923984d9
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());

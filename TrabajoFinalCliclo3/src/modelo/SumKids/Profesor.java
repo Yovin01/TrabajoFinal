@@ -23,7 +23,9 @@ public class Profesor extends Empleado {
         this.id_profesor = id_profesor;
         this.id_empleado = id_empleado;
     }
-
+  public Profesor(){
+      
+  }
     public String getEspecialidad() {
         return especialidad;
     }
