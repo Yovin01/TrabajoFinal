@@ -4,6 +4,7 @@
  */
 package controlador.conexion;
 
+import controlador.dao.AdaptadorDao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -19,7 +20,9 @@ public class OracleTest {
       public static void main(String[] args) {         
                SQLclass s = new SQLclass();
                s.conn();
+               
       } 
+     
 }
             
         

@@ -11,15 +11,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
-<<<<<<< HEAD
-import controlador.conexion;
-import Controlador.utilidades.Utilidades;
-import static Controlador.utilidades.Utilidades.getMethod;
-=======
 import controlador.utiles.Utilidades;
 import static controlador.utiles.Utilidades.getMethod;
-import controlador.tda.lista.ListaEnlazada;
->>>>>>> de13da8fab3f89909930f5209f2c3d7d923984d9
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;

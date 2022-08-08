@@ -16,6 +16,7 @@ public class Profesor extends Empleado {
     private String especialidad;
     private Integer id_profesor;
     private Integer id_empleado;
+   
 
     public Profesor(String especialidad, Integer id_profesor, Integer id_empleado1, TipoEmpleado cargo, Integer id_empleado, String correo, String apellidos, String nombres, String identificacion, String celular, String direccion) {
         super(cargo, id_empleado1, correo, apellidos, nombres, identificacion, celular, direccion);
