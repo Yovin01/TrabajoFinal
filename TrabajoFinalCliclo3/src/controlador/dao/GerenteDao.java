@@ -32,9 +32,7 @@ public class GerenteDao  extends AdaptadorDao<Gerente>{
     }
    public void AsignarDocente(){
        Estudiante e = new Estudiante();
-       Profesor p = new Profesor();
-       e.setProfesor(p);
-       
+     
    }
      public Boolean guardarModificar(){
             try{
