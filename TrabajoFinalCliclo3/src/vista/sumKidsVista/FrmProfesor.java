@@ -4,6 +4,8 @@
  */
 package vista.sumKidsVista;
 
+import controlador.dao.GerenteDao;
+import controlador.dao.ProfesorDao;
 import oracle.jdbc.diagnostics.SecuredLogger;
 
 /**
@@ -11,7 +13,7 @@ import oracle.jdbc.diagnostics.SecuredLogger;
  * @author User
  */
 public class FrmProfesor extends javax.swing.JFrame {
-
+    GerenteDao gerente = new GerenteDao();
     /**
      * Creates new form FrmProfesor
      */
@@ -73,8 +75,13 @@ public class FrmProfesor extends javax.swing.JFrame {
         jPanel2.setLayout(null);
 
         btnguardar.setText("Guardar");
+        btnguardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnguardarActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnguardar);
-        btnguardar.setBounds(321, 110, 80, 23);
+        btnguardar.setBounds(321, 110, 80, 24);
 
         txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -153,7 +160,7 @@ public class FrmProfesor extends javax.swing.JFrame {
         btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
         btnEliminar.setText("Eliminar");
         jPanel2.add(btnEliminar);
-        btnEliminar.setBounds(320, 150, 79, 23);
+        btnEliminar.setBounds(320, 150, 59, 23);
 
         btnEditar.setBackground(new java.awt.Color(0, 0, 204));
         btnEditar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -166,7 +173,7 @@ public class FrmProfesor extends javax.swing.JFrame {
         btnCancelar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnCancelar.setText("Cancelar");
         jPanel2.add(btnCancelar);
-        btnCancelar.setBounds(320, 260, 83, 23);
+        btnCancelar.setBounds(320, 260, 63, 23);
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel12.setText("Especialidad:");
@@ -292,6 +299,12 @@ public class FrmProfesor extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_txtNombreKeyTyped
+
+    private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarActionPerformed
+          ProfesorDao Prof = new ProfesorDao();
+        gerente.contratar(evt);
+        tabla.setModel(cn.getTableVendedores());
+    }//GEN-LAST:event_btnguardarActionPerformed
 
     /**
      * @param args the command line arguments
