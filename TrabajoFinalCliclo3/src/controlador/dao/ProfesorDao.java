@@ -4,8 +4,16 @@
  */
 package controlador.dao;
 
+import controlador.conexion.SQLclass;
 import controlador.tda.lista.ListaEnlazada;
+import java.lang.System.Logger;
+import java.lang.System.Logger.Level;
+import java.sql.Connection;
+import java.sql.Statement;
+import java.sql.ResultSet;
+import javax.swing.table.DefaultTableModel;
 import modelo.SumKids.Profesores;
+import java.sql.PreparedStatement;
 
 
 
@@ -16,7 +24,8 @@ import modelo.SumKids.Profesores;
  */
 public class ProfesorDao extends AdaptadorDao<Profesores>{
     private Profesores profesor;
-        
+        SQLclass s = new SQLclass();
+     Connection con = s.getConection();
         public Profesores getProfesor(){
             if (profesor==null) {
                 profesor = new Profesores();
@@ -45,22 +54,36 @@ public class ProfesorDao extends AdaptadorDao<Profesores>{
                 return false;
             }
         }
-              public static void main(String[] args) {
-       ProfesorDao profesores = new ProfesorDao();
-         ListaEnlazada<Profesores> lista = profesores.listar();
-       profesores.getProfesor().setId_profesor(0);
-       profesores.getProfesor().setId_empleado(0);
-        profesores.getProfesor().setEspecialidad("ccccc");   
-        
-   try{
-  profesores.guardar(profesores.getProfesor());
+  
+         public DefaultTableModel getTableProfesores() {
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo.addColumn("ID");
+        modelo.addColumn("Nombre");
+        modelo.addColumn("Edad");
+        modelo.addColumn("Sexo");
+        modelo.addColumn("Clave");
+        String slq = "SELECT * From Empleados";
+        String datos[] = new String[5];
+        Statement st;
+        try {
+            st = SQLclass.getConection().createStatement();
+            ResultSet rs = st.executeQuery(slq);
+            int i = 1;
+            while (rs.next()) {
+                datos[0] = ("" + i);
+                PreparedStatement pps = SQLclass.getConection().prepareStatement("UPDATE persona SET IDPersona=' " + i + "'WHERE Nombre='" + rs.getString(2) + "'");
+                pps.executeUpdate();
+                i++;
+                datos[1] = rs.getString(2);
+                datos[2] = rs.getString(3);
+                datos[3] = rs.getString(4);
+                datos[4] = rs.getString(5);
+                modelo.addRow(datos);
+            }
+        } catch (Exception ex) {
+            System.out.println("Error"+ex);
+        }
 
-       //for (int i = 0; i < lista.getSize(); i++) {
-         //  System.out.println(lista.obtenerDato(0).getId_representante() + lista.obtenerDato(0).getNombres());
-       //}
-   }catch(Exception e){
-       System.out.println("Error"+e);
-   }
-   
+        return modelo;
     }
-}
+  }

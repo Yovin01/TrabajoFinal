@@ -49,35 +49,51 @@ public class EmpleadoDao extends AdaptadorDao<Empleados>{
                 return false;
             }
         }
-         public DefaultTableModel getTableEmpleados() {
-        DefaultTableModel modelo = new DefaultTableModel();
-        modelo.addColumn("ID");
-        modelo.addColumn("Nombre");
-        modelo.addColumn("Edad");
-        modelo.addColumn("Sexo");
-        modelo.addColumn("Clave");
-        String slq = "SELECT * From Empleados";
-        String datos[] = new String[5];
-        Statement st;
+        
+         public Autorizacion entrar(Persona p) {
+        Autorizacion au = new Autorizacion();
+        au.setuOD(2);
         try {
-            st = SQLclass.getConection().createStatement();
-            ResultSet rs = st.executeQuery(slq);
-            int i = 1;
+            String slq = "SELECT Nombre FROM persona WHERE Clave='" + p.getClave() + "'";
+            PreparedStatement pps = con.prepareStatement(slq);
+            ResultSet rs = pps.executeQuery();
             while (rs.next()) {
-                datos[0] = ("" + i);
-                PreparedStatement pps = SQLclass.getConection().prepareStatement("UPDATE persona SET IDPersona=' " + i + "'WHERE Nombre='" + rs.getString(2) + "'");
-                pps.executeUpdate();
-                i++;
-                datos[1] = rs.getString(2);
-                datos[2] = rs.getString(3);
-                datos[3] = rs.getString(4);
-                datos[4] = rs.getString(5);
-                modelo.addRow(datos);
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(Empleados.class.getName()).log(Level.SEVERE, null, ex);
-        }
+                au.setAuto(true);
 
-        return modelo;
+            }
+
+            slq = "SELECT Nombre FROM admin WHERE Clave='" + p.getClave() + "'";
+            pps = con.prepareStatement(slq);
+            rs = pps.executeQuery();
+            while (rs.next()) {
+                au.setAuto(true);
+             
+            }
+
+        } catch (SQLException ex) {
+        }
+        if (au.isAuto() ) {
+            au.setAuto(false);
+            try {
+                String slq = "SELECT Clave FROM persona WHERE Nombre='" + p.getNombre() + "'";
+                PreparedStatement pps = con.prepareStatement(slq);
+                ResultSet rs = pps.executeQuery();
+                while (rs.next()) {
+                    au.setP(p);
+                    au.setAuto(true);
+                    au.setuOD(0);
+                }
+                slq = "SELECT Clave FROM admin WHERE Nombre='" + p.getNombre() + "'";
+                pps = con.prepareStatement(slq);
+                rs = pps.executeQuery();
+                while (rs.next()) {
+                    au.setP(p);
+                    au.setAuto(true);
+                    au.setuOD(1);
+                }
+            } catch (SQLException ex) {
+            }
+        }
+        return au;
     }
 }
