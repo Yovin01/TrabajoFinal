@@ -4,28 +4,28 @@
  */
 package controlador.dao;
 
-import modelo.SumKids.Estudiante;
+import modelo.SumKids.Estudiantes;
 
 /**
  *
  * @author Jordy
  */
-public class EstudianteDao extends AdaptadorDao<Estudiante>{
-          private Estudiante estudiante;
+public class EstudianteDao extends AdaptadorDao<Estudiantes>{
+          private Estudiantes estudiante;
         
-        public Estudiante getEstudiante(){
+        public Estudiantes getEstudiante(){
             if (estudiante==null) {
-                estudiante = new Estudiante();
+                estudiante = new Estudiantes();
                 
             }
             return estudiante;
         }
-        public void setEstudiante(Estudiante em){
+        public void setEstudiante(Estudiantes em){
             this.estudiante=em;
         }
         
         public EstudianteDao(){
-            super(Estudiante.class);
+            super(Estudiantes.class);
         }
         public Boolean guardarModificar(){
             try{

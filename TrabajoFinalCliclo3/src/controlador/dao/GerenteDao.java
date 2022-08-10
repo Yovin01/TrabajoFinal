@@ -4,9 +4,9 @@
  */
 package controlador.dao;
 
-import modelo.SumKids.Estudiante;
+import modelo.SumKids.Estudiantes;
 import modelo.SumKids.Gerente;
-import modelo.SumKids.Profesor;
+import modelo.SumKids.Profesores;
 import modelo.enums.estadoMatricula;
 
 /**
@@ -31,7 +31,7 @@ public class GerenteDao  extends AdaptadorDao<Gerente>{
         this.gerente = gerente;
     }
    public void AsignarDocente(){
-       Estudiante e = new Estudiante();
+       Estudiantes e = new Estudiantes();
      
    }
      public Boolean guardarModificar(){

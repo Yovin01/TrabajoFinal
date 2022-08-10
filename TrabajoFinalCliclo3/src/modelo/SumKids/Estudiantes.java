@@ -8,18 +8,18 @@ package modelo.SumKids;
  *
  * @author User
  */
-public class Estudiante extends Persona{
+public class Estudiantes extends Persona{
     
     private Integer id_estudiante;
     private Integer id_representante;
-    private Representante edad;
+    private Representantes edad;
     private Double pension;
-    private Profesor profesor;
+    private Profesores profesor;
     
-    public Estudiante() {
+    public Estudiantes() {
     }
 
-    public Estudiante(Integer id_estudiante, Integer id_representante, Representante edad, Double pension, Profesor profesor, String apellidos, String nombres, String identificacion, String celular, String direccion) {
+    public Estudiantes(Integer id_estudiante, Integer id_representante, Representantes edad, Double pension, Profesores profesor, String apellidos, String nombres, String identificacion, String celular, String direccion) {
         super(apellidos, nombres, identificacion, celular, direccion);
         this.id_estudiante = id_estudiante;
         this.id_representante = id_representante;
@@ -52,11 +52,11 @@ public class Estudiante extends Persona{
         this.id_representante = representante;
     }
 
-    public Representante getEdad() {
+    public Representantes getEdad() {
         return edad;
     }
 
-    public void setEdad(Representante edad) {
+    public void setEdad(Representantes edad) {
         this.edad = edad;
     }
 
@@ -68,11 +68,11 @@ public class Estudiante extends Persona{
         this.pension = pension;
     }
 
-    public Profesor getProfesor() {
+    public Profesores getProfesor() {
         return profesor;
     }
 
-    public void setProfesor(Profesor profesor) {
+    public void setProfesor(Profesores profesor) {
         this.profesor = profesor;
     }
     

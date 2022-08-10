@@ -18,30 +18,29 @@ import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
 /**
  *
  * @author sebastian
  */
+
 public class AdaptadorDao<T> implements InterfazDao<T> {
 
     private Connection conexion;
     private Class clazz;
-    private String ALL = "select * from ";
-    private String ALL_ID = "select * from ";
+    private String ALL = "select * from";
+    private String ALL_ID = "select * from";
 
     public AdaptadorDao(Class clazz) {
         this.clazz = clazz;
-        this.conexion = SQLclass.getConecction();
+        this.conexion = SQLclass.getConection();
         ALL += clazz.getSimpleName().toLowerCase();
-        ALL_ID += clazz.getSimpleName().toLowerCase() + " where id = ";
+        ALL_ID += clazz.getSimpleName().toLowerCase() + " where id =";
     }
 
     public Connection getConexion() {
         return conexion;
     }
-
-
-
 
     public Class getClazz() {
         return clazz;
@@ -51,7 +50,8 @@ public class AdaptadorDao<T> implements InterfazDao<T> {
     public ListaEnlazada<T> listar() {
         ListaEnlazada<T> lista = new ListaEnlazada<>();
         try {
-            PreparedStatement stmt = getConexion().prepareStatement(ALL);
+            String seleccion = "select * from "+clazz.getSimpleName().toLowerCase();
+            PreparedStatement stmt = getConexion().prepareStatement(seleccion);
             ResultSet resultSet = stmt.executeQuery();
             ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
             String[] columna = new String[resultSetMetaData.getColumnCount()];
@@ -62,8 +62,8 @@ public class AdaptadorDao<T> implements InterfazDao<T> {
             while (resultSet.next()) {
                 T obj = (T) clazz.getConstructor().newInstance();
                 for (int i = 0; i < columna.length; i++) {
-                    Object objeto = resultSet.getObject(i + 1);
-                    System.out.println("** " + objeto + columna[i]);
+                    Object objeto = resultSet.getObject(i+1);
+                    System.out.println("nuevo"+"\n"+"\t"+ columna[i]+"\n"+objeto.toString()+"\t");
                     if (objeto != null && objeto.getClass().getName().equals("java.sql.Timestamp")) {
                         java.sql.Timestamp aux = (java.sql.Timestamp) objeto;
                         java.util.Date fecha = new Date(aux.getTime());
@@ -71,11 +71,9 @@ public class AdaptadorDao<T> implements InterfazDao<T> {
                     } else {
                         Utilidades.cambiarDatos(objeto, columna[i], obj);
                     }
-
                 }
                 lista.insertarCabecera(obj);
             }
-
         } catch (Exception e) {
             System.out.println("Error al cargar " + e);
             e.printStackTrace();
@@ -87,19 +85,21 @@ public class AdaptadorDao<T> implements InterfazDao<T> {
     @Override
     public void guardar(T dato) throws Exception {
         String[] columnas = columnas();
-        String comando = "insert into " + clazz.getSimpleName().toLowerCase() + " ";
+   String comando= "insert into " + clazz.getSimpleName().toLowerCase() + " ";
         String variables = "";
         String datos = "";
-        for (int i = 0; i < columnas.length; i++) {
-            if (i == columnas.length - 1) {
+        String m = "  ' ";
+for (int i = 0; i < columnas.length; i++) {
+            if (i == columnas.length -1) {
                 variables += columnas[i];//id, nombres, external_id, ...
                 datos += tipoDato(columnas[i], dato);//0, "casa", "343-545
+               
             } else {
                 variables += columnas[i] + " , ";
-                datos += tipoDato(columnas[i], dato) + " , ";
+                datos += tipoDato(columnas[i], dato) +",";
             }
         }
-        comando += "(" + variables + ") value(" + datos + ")";
+    comando += "(" + variables + ") values(" + datos + ")";
         try {
             PreparedStatement stmt = getConexion().prepareStatement(comando);
             stmt.executeUpdate();
@@ -151,7 +151,10 @@ public class AdaptadorDao<T> implements InterfazDao<T> {
     public T obtener(Integer id) throws Exception {
         T obj = null;
         String[] columna = columnas();
-        PreparedStatement stmt = getConexion().prepareStatement(ALL_ID + id.toString());
+        String m = clazz.getSimpleName().toLowerCase();
+        m=m.substring(0,m.length()-1)+ m.substring(m.length());
+        System.out.println(m);
+        PreparedStatement stmt = getConexion().prepareStatement(" select * from "+clazz.getSimpleName().toLowerCase() + " where id_"+m+" = "+ id.toString());
         ResultSet resultSet = stmt.executeQuery();
         while (resultSet.next()) {
             obj = (T) clazz.getConstructor().newInstance();
@@ -173,7 +176,7 @@ public class AdaptadorDao<T> implements InterfazDao<T> {
     private String[] columnas() {
         String[] columna = null;
         try {
-            String seleccion = ALL;
+        String seleccion = "select * from "+clazz.getSimpleName().toLowerCase();
             PreparedStatement stmt = getConexion().prepareStatement(seleccion);
             ResultSet resultSet = stmt.executeQuery();
             ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
@@ -213,5 +216,5 @@ public class AdaptadorDao<T> implements InterfazDao<T> {
 
         return aux;
     }
-
+   
 }

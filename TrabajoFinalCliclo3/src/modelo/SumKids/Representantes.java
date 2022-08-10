@@ -10,15 +10,15 @@ import modelo.SumKids.Persona;
  *
  * @author User
  */
-public class Representante extends Persona {
+public class Representantes extends Persona {
 
     private String correo;
     private Integer id_representante;
 
-    public Representante() {
+    public Representantes() {
     }
 
-    public Representante(String correo, String celular) {
+    public Representantes(String correo, String celular) {
         this.correo = correo;
     }
 

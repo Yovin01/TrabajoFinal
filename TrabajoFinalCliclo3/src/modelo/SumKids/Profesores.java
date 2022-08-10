@@ -4,7 +4,7 @@
  */
 package modelo.SumKids;
 
-import modelo.SumKids.Empleado;
+import modelo.SumKids.Empleados;
 import modelo.enums.TipoEmpleado;
 
 /**
@@ -12,19 +12,19 @@ import modelo.enums.TipoEmpleado;
  * @author User
  
  */
-public class Profesor extends Empleado {
+public class Profesores extends Empleados {
     private String especialidad;
     private Integer id_profesor;
     private Integer id_empleado;
    
 
-    public Profesor(String especialidad, Integer id_profesor, Integer id_empleado1, TipoEmpleado cargo, Integer id_empleado, String correo, String apellidos, String nombres, String identificacion, String celular, String direccion) {
+    public Profesores(String especialidad, Integer id_profesor, Integer id_empleado1, TipoEmpleado cargo, Integer id_empleado, String correo, String apellidos, String nombres, String identificacion, String celular, String direccion) {
         super(cargo, id_empleado1, correo, apellidos, nombres, identificacion, celular, direccion);
         this.especialidad = especialidad;
         this.id_profesor = id_profesor;
         this.id_empleado = id_empleado;
     }
-  public Profesor(){
+  public Profesores(){
       
   }
     public String getEspecialidad() {
