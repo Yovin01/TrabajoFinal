@@ -17,8 +17,9 @@ import oracle.jdbc.diagnostics.SecuredLogger;
  * @author User
  */
 public class FrmProfesor extends javax.swing.JFrame {
-    
+
     GerenteDao gerente = new GerenteDao();
+
     /**
      * Creates new form FrmProfesor
      */
@@ -306,8 +307,22 @@ public class FrmProfesor extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNombreKeyTyped
 
     private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarActionPerformed
-        
-        Profesores prof = new Profesores(String especialidad, Integer id_profesor, Integer id_empleado1, TipoEmpleado cargo, Integer id_empleado, String correo, String apellidos, String nombres, String identificacion, String celular, String direccion);
+        String especialidad = txtEspecialidad.getText();
+        TipoEmpleado m = TipoEmpleado.PROFESOR;
+        String correo = txtCorreo.getText();
+        String apellidos = txtApellido.getText();
+        String nombre = txtNombre.getText();
+        String identificacion = txtIdentificacion.getText();
+        String celular = txtCelular.getText();
+        String direccion = txtDireccion.getText();
+
+        Profesores prof = new Profesores( especialidad
+        ,  id_profesor,  id_empleado1
+        ,  m,  id_empleado
+        ,  correo,  apellidos
+        ,  nombre,  identificacion
+        ,  celular,  direccion
+        );
         gerente.contratar(prof);
         ProfesorDao p = new ProfesorDao();
         tblProfesor.setModel(p.getTableProfesores());
