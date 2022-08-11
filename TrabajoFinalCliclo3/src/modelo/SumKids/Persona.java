@@ -19,6 +19,16 @@ public class Persona {
 
     public Persona() {
     }
+  public Persona(String ide) {
+      this.identificacion= ide;
+    }
+    public Persona(String apellidos, String nombres, String identificacion, char sexo, String direccion) {
+        this.apellidos = apellidos;
+        this.nombres = nombres;
+        this.identificacion = identificacion;
+        this.sexo = sexo;
+        this.direccion = direccion;
+    }
 
     public Persona(String apellidos, String nombres, String identificacion, String celular, String direccion) {
         this.apellidos = apellidos;

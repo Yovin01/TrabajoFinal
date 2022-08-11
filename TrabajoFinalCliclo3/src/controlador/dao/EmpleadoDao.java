@@ -49,51 +49,5 @@ public class EmpleadoDao extends AdaptadorDao<Empleados>{
                 return false;
             }
         }
-        
-         public Autorizacion entrar(Persona p) {
-        Autorizacion au = new Autorizacion();
-        au.setuOD(2);
-        try {
-            String slq = "SELECT Nombre FROM persona WHERE Clave='" + p.getClave() + "'";
-            PreparedStatement pps = con.prepareStatement(slq);
-            ResultSet rs = pps.executeQuery();
-            while (rs.next()) {
-                au.setAuto(true);
 
-            }
-
-            slq = "SELECT Nombre FROM admin WHERE Clave='" + p.getClave() + "'";
-            pps = con.prepareStatement(slq);
-            rs = pps.executeQuery();
-            while (rs.next()) {
-                au.setAuto(true);
-             
-            }
-
-        } catch (SQLException ex) {
-        }
-        if (au.isAuto() ) {
-            au.setAuto(false);
-            try {
-                String slq = "SELECT Clave FROM persona WHERE Nombre='" + p.getNombre() + "'";
-                PreparedStatement pps = con.prepareStatement(slq);
-                ResultSet rs = pps.executeQuery();
-                while (rs.next()) {
-                    au.setP(p);
-                    au.setAuto(true);
-                    au.setuOD(0);
-                }
-                slq = "SELECT Clave FROM admin WHERE Nombre='" + p.getNombre() + "'";
-                pps = con.prepareStatement(slq);
-                rs = pps.executeQuery();
-                while (rs.next()) {
-                    au.setP(p);
-                    au.setAuto(true);
-                    au.setuOD(1);
-                }
-            } catch (SQLException ex) {
-            }
-        }
-        return au;
-    }
 }

@@ -2,9 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package controlador.dao;
+package controlador.ctrlSunKidsClub;
 
 import controlador.conexion.SQLclass;
+import controlador.dao.AdaptadorDao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -19,8 +20,7 @@ import modelo.enums.estadoMatricula;
  * @author Jordy
  */
 public class GerenteDao  extends AdaptadorDao<Gerente>{
-   SQLclass sql = new SQLclass();
-   Connection Co = sql.getConection();
+   
     private Gerente gerente;
    
    public GerenteDao(){
@@ -53,16 +53,6 @@ public class GerenteDao  extends AdaptadorDao<Gerente>{
                 return false;
             }
         }
-        public void contratar(Profesores v) {
-        try {
-            PreparedStatement PS = Co.prepareStatement("INSERT INTO PROFESORES(ID_PROFESOR,ID_EMPLEADO,ESPECIALIDAD) VALUES (?,?,?)");
-            PS.setInt(1, v.getId_profesor());
-            PS.setInt(2, v.getId_empleado());
-            PS.setString(3, v.getEspecialidad());
-            PS.executeUpdate();
-            JOptionPane.showMessageDialog(null, "Profesor agregado correctamente");
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Datos erroneos");
-        }
-    }
+     
+     
 }

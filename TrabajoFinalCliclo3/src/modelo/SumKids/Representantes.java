@@ -18,6 +18,11 @@ public class Representantes extends Persona {
     public Representantes() {
     }
 
+    public Representantes(String identificacion,Integer id_representante) {
+        super(identificacion);
+        this.id_representante = id_representante;
+    }
+
     public Representantes(String correo, String celular) {
         this.correo = correo;
     }

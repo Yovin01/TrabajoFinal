@@ -15,13 +15,23 @@ public class Empleados extends Persona {
     private TipoEmpleado cargo;
     private Integer id_empleado;
     private String correo;
+    private String constraseña;
 
-    public Empleados(TipoEmpleado cargo, Integer id_empleado, String correo, String apellidos, String nombres, String identificacion, String celular, String direccion) {
+    public Empleados(TipoEmpleado cargo, Integer id_empleado, String correo, String constraseña) {
+        this.cargo = cargo;
+        this.id_empleado = id_empleado;
+        this.correo = correo;
+        this.constraseña = constraseña;
+    }
+
+    public Empleados(TipoEmpleado cargo, Integer id_empleado, String correo, String constraseña, String apellidos, String nombres, String identificacion, String celular, String direccion) {
         super(apellidos, nombres, identificacion, celular, direccion);
         this.cargo = cargo;
         this.id_empleado = id_empleado;
         this.correo = correo;
+        this.constraseña = constraseña;
     }
+    
    public Empleados(){
        
    }

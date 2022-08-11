@@ -14,6 +14,8 @@ import java.sql.ResultSet;
 import javax.swing.table.DefaultTableModel;
 import modelo.SumKids.Profesores;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import modelo.SumKids.Representantes;
 
 
 
@@ -85,5 +87,13 @@ public class ProfesorDao extends AdaptadorDao<Profesores>{
         }
 
         return modelo;
+    }
+         public static void main(String[] args) throws SQLException, Exception {
+         RepresentanteDao p = new RepresentanteDao();
+          //ListaEnlazada<>
+             System.out.println(p);
+          Representantes m = new Representantes("12312323",p.contar()+1);
+          p.guardar(m);
+          
     }
   }

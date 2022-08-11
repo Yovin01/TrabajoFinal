@@ -15,9 +15,10 @@ import controlador.utiles.Utilidades;
 import static controlador.utiles.Utilidades.getMethod;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
+   import java.lang.Integer;
 
 /**
  *
@@ -28,9 +29,31 @@ public class AdaptadorDao<T> implements InterfazDao<T> {
 
     private Connection conexion;
     private Class clazz;
-    private String ALL = "select * from";
+    private String contar = "select count(id_";
+    private String ALL = "select * from ";
     private String ALL_ID = "select * from";
-
+    
+    public Integer contar () throws SQLException{
+        String m = clazz.getSimpleName().toLowerCase();
+        m=m.substring(0,m.length()-1)+ m.substring(m.length());
+        //System.out.println(m);
+        PreparedStatement stmt = getConexion().prepareStatement(contar+m+ " ) from "+clazz.getSimpleName().toLowerCase());
+        
+        ResultSet re= stmt.executeQuery();
+        Integer a=0;
+        while(re.next()){
+            a = (Integer) re.getInt(1);
+        }
+        if (a == null) {
+            a=0;
+        }
+        return a;
+    }
+    public void commit() throws SQLException{
+          PreparedStatement stmt = getConexion().prepareStatement("commit");
+          stmt.executeQuery();
+    }
+ 
     public AdaptadorDao(Class clazz) {
         this.clazz = clazz;
         this.conexion = SQLclass.getConection();
@@ -88,17 +111,24 @@ public class AdaptadorDao<T> implements InterfazDao<T> {
    String comando= "insert into " + clazz.getSimpleName().toLowerCase() + " ";
         String variables = "";
         String datos = "";
-        String m = "  ' ";
+        //String m = "  ' ";
+        System.out.println("*******************");
+        System.out.println(tipoDato(columnas[1],dato));
+         System.out.println(tipoDato(columnas[0],dato));
+      System.out.println(tipoDato(columnas[2],dato));
 for (int i = 0; i < columnas.length; i++) {
-            if (i == columnas.length -1) {
-                variables += columnas[i];//id, nombres, external_id, ...
+            if (i == columnas.length-1) {
+                variables += columnas[i]; //id, nombres, external_id, ...
+                System.out.println(variables);
                 datos += tipoDato(columnas[i], dato);//0, "casa", "343-545
-               
+                System.out.println();
             } else {
+                System.out.println(datos);
                 variables += columnas[i] + " , ";
-                datos += tipoDato(columnas[i], dato) +",";
+               datos += tipoDato(columnas[i], dato) +",";
             }
         }
+
     comando += "(" + variables + ") values(" + datos + ")";
         try {
             PreparedStatement stmt = getConexion().prepareStatement(comando);
@@ -108,6 +138,7 @@ for (int i = 0; i < columnas.length; i++) {
         }
 
         System.out.println(comando);
+        commit();
     }
 
     @Override
@@ -144,7 +175,7 @@ for (int i = 0; i < columnas.length; i++) {
         }
 
         System.out.println(comando);
-
+ commit();
     }
 
     @Override

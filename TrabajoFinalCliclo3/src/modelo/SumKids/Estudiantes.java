@@ -19,14 +19,16 @@ public class Estudiantes extends Persona{
     public Estudiantes() {
     }
 
-    public Estudiantes(Integer id_estudiante, Integer id_representante, Representantes edad, Double pension, Profesores profesor, String apellidos, String nombres, String identificacion, String celular, String direccion) {
-        super(apellidos, nombres, identificacion, celular, direccion);
+    public Estudiantes(Integer id_estudiante, Integer id_representante, Representantes edad, Double pension, Profesores profesor, String apellidos, String nombres, String identificacion, char sexo, String direccion) {
+        super(apellidos, nombres, identificacion, sexo, direccion);
         this.id_estudiante = id_estudiante;
         this.id_representante = id_representante;
         this.edad = edad;
         this.pension = pension;
         this.profesor = profesor;
     }
+     
+  
 
     public Integer getId_representante() {
         return id_representante;

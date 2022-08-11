@@ -5,8 +5,9 @@
 package vista.sumKidsVista;
 
 import controlador.conexion.SQLclass;
-import controlador.dao.GerenteDao;
+import controlador.ctrlSunKidsClub.GerenteDao;
 import controlador.dao.ProfesorDao;
+import controlador.ctrlSunKidsClub.controladorSecretaria;
 import java.sql.Connection;
 import modelo.SumKids.Profesores;
 import modelo.enums.TipoEmpleado;
@@ -18,7 +19,7 @@ import oracle.jdbc.diagnostics.SecuredLogger;
  */
 public class FrmProfesor extends javax.swing.JFrame {
 
-    GerenteDao gerente = new GerenteDao();
+    controladorSecretaria secretaria = new controladorSecretaria();
 
     /**
      * Creates new form FrmProfesor
@@ -316,16 +317,15 @@ public class FrmProfesor extends javax.swing.JFrame {
         String celular = txtCelular.getText();
         String direccion = txtDireccion.getText();
 
-        Profesores prof = new Profesores( especialidad
-        ,  id_profesor,  id_empleado1
-        ,  m,  id_empleado
-        ,  correo,  apellidos
-        ,  nombre,  identificacion
-        ,  celular,  direccion
-        );
-        gerente.contratar(prof);
-        ProfesorDao p = new ProfesorDao();
-        tblProfesor.setModel(p.getTableProfesores());
+//        Profesores prof = new Profesores( especialidad
+//        ,  m,  correo,  apellidos
+//        ,  nombre,  identificacion
+//        ,  celular,  direccion
+//        );
+//        
+//        ProfesorDao p = new ProfesorDao();
+//        secretaria.registrar(prof);
+//        tblProfesor.setModel(p.getTableProfesores());
     }//GEN-LAST:event_btnguardarActionPerformed
 
     /**
