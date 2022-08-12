@@ -15,28 +15,28 @@ public class Empleados extends Persona {
     private TipoEmpleado cargo;
     private Integer id_empleado;
     private String correo;
-    private String constraseña;
+    private String password;
 
     public Empleados(TipoEmpleado cargo, Integer id_empleado, String correo, String constraseña) {
         this.cargo = cargo;
         this.id_empleado = id_empleado;
         this.correo = correo;
-        this.constraseña = constraseña;
+        this.password = constraseña;
     }
                        
     public Empleados(String nombres ,  String apellidos  ,   String identificacion,  String celular,char Ge , String direccion ,TipoEmpleado cargo, String correo, String constraseña) {
         super(apellidos, nombres, identificacion,celular, Ge,direccion);
         this.cargo = cargo;
         this.correo = correo;
-        this.constraseña = constraseña;
+        this.password = constraseña;
     }
 
     public String getConstraseña() {
-        return constraseña;
+        return password;
     }
 
     public void setConstraseña(String constraseña) {
-        this.constraseña = constraseña;
+        this.password = constraseña;
     }
     
    public Empleados(){

@@ -26,7 +26,7 @@ public class Factura {
     public Factura() {
     }
 
-    public Factura(Integer nro, Integer id_representante, Double pension, Date fecha, String nombre, String apellido, String direccion, String identificacion, String celular, String detalle) {
+    public Factura(Integer nro, Integer id_representante, Double pension, Date fecha,String detalle) {
         this.id_factura = nro;
         this.id_representante = id_representante;
         this.pension = pension;

@@ -12,6 +12,7 @@ import java.lang.reflect.Method;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import modelo.SumKids.Factura;
@@ -52,6 +53,31 @@ public class FacturaDao extends AdaptadorDao<Factura> {
                 return false;
             }
         }
-
+           public void guardarRepresentante(Object dato) throws SQLException {
+            Factura fact = (Factura) dato;
+        FacturaDao r = new FacturaDao();
+        String[] columnas = super.columnas();      
+   String comando= "insert into Representantes";
+        String variables = "";
+        System.out.println("*******************");
+for (int i = 0; i < columnas.length; i++) {
+            if (i == columnas.length-1) {
+                variables += columnas[i]; 
+              
+            } else {    
+                variables += columnas[i] + " , ";
+            }
+        }
+          
+          comando += "(" + variables + ") values("+r.contar()+","+super.contar()+1+",' "+fact.getPension()+" ',' "+fact.getFecha()+" ' , ' "+fact.getDetalle()+" ',)";
+       try {
+            PreparedStatement stmt = getConexion().prepareStatement(comando);
+            stmt.executeUpdate();
+        } catch (Exception ex) {
+            System.out.println("Error en guardar " + ex);
+        }
+        System.out.println(comando);
+        commit();
+        }
 }
 

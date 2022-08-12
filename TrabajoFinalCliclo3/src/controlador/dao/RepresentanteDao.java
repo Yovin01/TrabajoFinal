@@ -56,9 +56,8 @@ public class RepresentanteDao extends AdaptadorDao<Representantes>{
             }
         }
         
-        public void guardarRepresentante(Object dato){
+        public void guardarRepresentante(Object dato) throws SQLException{
             Representantes Repre = (Representantes) dato;
-        RepresentanteDao r = new RepresentanteDao();
         String[] columnas = super.columnas();      
    String comando= "insert into Representantes";
         String variables = "";
@@ -71,20 +70,16 @@ for (int i = 0; i < columnas.length; i++) {
                 variables += columnas[i] + " , ";
             }
         }
-      //e.guardarEmpleado(q);
-    comando += "(" + variables + ") values("+r.contar()+","+super.contar()+1+",'"+p.getEspecialidad()+"')";
+
+    comando += "(" + variables + ") values('"+Repre.getCorreo()+" ', ' "+Repre.getApellidos()+" ',' "+Repre.getNombres()+" ',' "+Repre.getIdentificacion()+" ',' "+Repre.getCelular()+" ' , ' "+Repre.getGenero()+" ',' "+Repre.getDireccion()+" ');";
             try {
             PreparedStatement stmt = getConexion().prepareStatement(comando);
             stmt.executeUpdate();
         } catch (SQLException ex) {
             System.out.println("Error en guardar " + ex);
         }
-
         System.out.println(comando);
         commit();
         }
        
-        public static void main(String[] args) {
-        
-    }
 }
