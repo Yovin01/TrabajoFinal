@@ -85,15 +85,16 @@ public class FrmProfesor extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
         jPanel1.setLayout(null);
 
-        jLabel7.setFont(new java.awt.Font("Snap ITC", 0, 24)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel7.setText("Agregar Profesor");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(150, 10, 270, 32);
+        jLabel7.setBounds(150, 10, 270, 29);
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3), "Datos del Profesor", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
         jPanel2.setLayout(null);
 
+        btnguardar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnguardar.setText("Guardar");
         btnguardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,7 +102,7 @@ public class FrmProfesor extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnguardar);
-        btnguardar.setBounds(321, 110, 80, 24);
+        btnguardar.setBounds(321, 110, 90, 30);
 
         txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -176,24 +177,24 @@ public class FrmProfesor extends javax.swing.JFrame {
         txtDireccion.setBounds(130, 230, 158, 30);
 
         btnEliminar.setBackground(new java.awt.Color(255, 0, 51));
-        btnEliminar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnEliminar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
         btnEliminar.setText("Eliminar");
         jPanel2.add(btnEliminar);
-        btnEliminar.setBounds(320, 150, 70, 23);
+        btnEliminar.setBounds(320, 160, 90, 30);
 
         btnEditar.setBackground(new java.awt.Color(0, 0, 204));
-        btnEditar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnEditar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnEditar.setForeground(new java.awt.Color(255, 255, 255));
         btnEditar.setText("Editar");
         jPanel2.add(btnEditar);
-        btnEditar.setBounds(320, 210, 80, 23);
+        btnEditar.setBounds(320, 210, 90, 30);
 
         btnCancelar.setBackground(new java.awt.Color(255, 255, 255));
-        btnCancelar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnCancelar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnCancelar.setText("Cancelar");
         jPanel2.add(btnCancelar);
-        btnCancelar.setBounds(320, 260, 63, 23);
+        btnCancelar.setBounds(310, 260, 100, 30);
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel12.setText("Especialidad:");
@@ -239,10 +240,10 @@ public class FrmProfesor extends javax.swing.JFrame {
         jPanel1.add(jPanel3);
         jPanel3.setBounds(10, 450, 520, 170);
 
-        jLabel6.setFont(new java.awt.Font("Snap ITC", 0, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel6.setText("Buscar:");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(10, 410, 140, 24);
+        jLabel6.setBounds(10, 410, 140, 29);
 
         jComboBox1.setFont(new java.awt.Font("Lucida Bright", 1, 14)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Apellido", "Identificacion" }));
@@ -254,9 +255,10 @@ public class FrmProfesor extends javax.swing.JFrame {
         txtBuscar.setBounds(210, 410, 190, 30);
 
         btnbuscar.setFont(new java.awt.Font("Lucida Bright", 1, 14)); // NOI18N
+        btnbuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/find.png"))); // NOI18N
         btnbuscar.setText("Buscar");
         jPanel1.add(btnbuscar);
-        btnbuscar.setBounds(410, 410, 90, 30);
+        btnbuscar.setBounds(410, 410, 110, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

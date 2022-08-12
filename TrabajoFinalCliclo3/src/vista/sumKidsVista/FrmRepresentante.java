@@ -75,6 +75,7 @@ public class FrmRepresentante extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3), "Datos del Representante", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
         jPanel2.setLayout(null);
 
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setText("Guardar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,7 +83,7 @@ public class FrmRepresentante extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton1);
-        jButton1.setBounds(20, 220, 71, 23);
+        jButton1.setBounds(20, 213, 100, 30);
 
         txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -157,21 +158,21 @@ public class FrmRepresentante extends javax.swing.JFrame {
         txtDireccion.setBounds(130, 180, 158, 20);
 
         btnEliminar.setBackground(new java.awt.Color(255, 0, 51));
-        btnEliminar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnEliminar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
         btnEliminar.setText("Eliminar");
         jPanel2.add(btnEliminar);
-        btnEliminar.setBounds(110, 220, 79, 23);
+        btnEliminar.setBounds(130, 210, 90, 30);
 
         btnEditar.setBackground(new java.awt.Color(0, 0, 204));
-        btnEditar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnEditar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnEditar.setForeground(new java.awt.Color(255, 255, 255));
         btnEditar.setText("Editar");
         jPanel2.add(btnEditar);
-        btnEditar.setBounds(210, 220, 69, 23);
+        btnEditar.setBounds(240, 210, 90, 30);
 
         btnCancelar.setBackground(new java.awt.Color(255, 255, 255));
-        btnCancelar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnCancelar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -179,29 +180,29 @@ public class FrmRepresentante extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnCancelar);
-        btnCancelar.setBounds(320, 220, 83, 23);
+        btnCancelar.setBounds(340, 210, 100, 30);
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(20, 50, 430, 260);
+        jPanel2.setBounds(20, 50, 460, 260);
 
-        jLabel7.setFont(new java.awt.Font("Snap ITC", 0, 18)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel7.setText("Administracion de Representantes");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(80, 10, 370, 24);
+        jLabel7.setBounds(80, 10, 370, 29);
 
-        jLabel6.setFont(new java.awt.Font("Snap ITC", 0, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel6.setText("Buscar:");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(10, 330, 140, 24);
+        jLabel6.setBounds(10, 320, 140, 29);
 
         jComboBox1.setFont(new java.awt.Font("Lucida Bright", 1, 14)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Apellido", "Identificacion" }));
         jPanel1.add(jComboBox1);
-        jComboBox1.setBounds(100, 320, 90, 30);
+        jComboBox1.setBounds(100, 320, 110, 30);
 
         txtBuscar.setFont(new java.awt.Font("Lucida Bright", 1, 14)); // NOI18N
         jPanel1.add(txtBuscar);
-        txtBuscar.setBounds(210, 320, 190, 30);
+        txtBuscar.setBounds(230, 320, 170, 30);
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 204));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3), "Datos Registrados", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
@@ -229,7 +230,7 @@ public class FrmRepresentante extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Lucida Bright", 1, 14)); // NOI18N
         jButton2.setText("Buscar");
         jPanel1.add(jButton2);
-        jButton2.setBounds(410, 330, 90, 30);
+        jButton2.setBounds(420, 320, 90, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
