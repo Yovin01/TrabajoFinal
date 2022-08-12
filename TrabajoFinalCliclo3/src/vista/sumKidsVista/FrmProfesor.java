@@ -9,6 +9,9 @@ import controlador.ctrlSunKidsClub.GerenteDao;
 import controlador.dao.ProfesorDao;
 import controlador.ctrlSunKidsClub.controladorSecretaria;
 import java.sql.Connection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import modelo.SumKids.Profesores;
 import modelo.enums.TipoEmpleado;
 import oracle.jdbc.diagnostics.SecuredLogger;
@@ -326,16 +329,20 @@ public class FrmProfesor extends javax.swing.JFrame {
         String identificacion = txtIdentificacion.getText();
         String celular = txtCelular.getText();
         String direccion = txtDireccion.getText();
+        char g = 'g';
+        String contrasena = "secretaria";
         limpiar();
-//        Profesores prof = new Profesores( especialidad
-//        ,  m,  correo,  apellidos
-//        ,  nombre,  identificacion
-//        ,  celular,  direccion
-//        );
-//        
-//        ProfesorDao p = new ProfesorDao();
-//        secretaria.registrar(prof);
-//        tblProfesor.setModel(p.getTableProfesores());
+        Profesores prof = new Profesores( especialidad,nombre, apellidos,identificacion,  celular,g,  direccion,m, correo,contrasena );
+        
+        ProfesorDao p = new ProfesorDao();
+        try {
+            secretaria.registrar(prof);
+            JOptionPane.showMessageDialog(this, "Creado con exito");
+        } catch (Exception ex) {
+            Logger.getLogger(FrmProfesor.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, "Fallo al crear");
+        }
+        tblProfesor.setModel(p.getTableProfesores());
     }//GEN-LAST:event_btnguardarActionPerformed
 
     /**

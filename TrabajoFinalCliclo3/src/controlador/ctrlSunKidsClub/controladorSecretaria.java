@@ -20,9 +20,13 @@ import modelo.SumKids.Profesores;
  * @author Jordy
  */
 public class controladorSecretaria {
-        private ProfesorDao pro= new ProfesorDao();
-        private RepresentanteDao repr = new RepresentanteDao();
-        private EmpleadoDao empl = new EmpleadoDao();
-         private EstudianteDao estu = new EstudianteDao();
-           
+
+    private ProfesorDao pro = new ProfesorDao();
+    private RepresentanteDao repr = new RepresentanteDao();
+    private EmpleadoDao empl = new EmpleadoDao();
+    private EstudianteDao estu = new EstudianteDao();
+
+    public void registrar(Object dato) throws Exception {
+        Profesores p = (Profesores) dato;
+    }
 }
