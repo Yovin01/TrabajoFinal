@@ -129,7 +129,7 @@ for (int i = 0; i < columnas.length; i++) {
             PreparedStatement pps = getConexion().prepareStatement(sql);
             ResultSet resultado = pps.executeQuery();
             while (resultado.next()) {
-                Profesores profesor = new Profesores(Integer.parseInt(resultado.getString(10)), TipoEmpleado.P_PRO, Integer.parseInt(resultado.getString(0)), resultado.getString(8), resultado.getString(2), resultado.getString(1),resultado.getString(3),resultado.getString(4) ,resultado.getString(5).charAt(0), resultado.getString(6), resultado.getString(12));
+                Profesores profesor = new Profesores(resultado.getInt(10), TipoEmpleado.P_PRO, Integer.parseInt(resultado.getString(0)), resultado.getString(8), resultado.getString(2), resultado.getString(1),resultado.getString(3),resultado.getString(4) ,resultado.getString(5).charAt(0), resultado.getString(6), resultado.getString(12));
                 listaProfesores.insertarCabecera(profesor);
             }
 

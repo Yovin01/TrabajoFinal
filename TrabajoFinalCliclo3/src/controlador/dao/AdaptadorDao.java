@@ -18,62 +18,62 @@ import java.lang.reflect.Method;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-   import java.lang.Integer;
+import java.lang.Integer;
 
 /**
  *
  * @author sebastian
  */
+public class AdaptadorDao<T> implements InterfazDao<T> {
 
-public class AdaptadorDao<T> implements InterfazDao<T>{
- 
     private Connection conexion;
     private Class clazz;
     private String contar = "select count(id_";
     private String ALL = "select * from ";
     private String ALL_ID = "select * from";
-    
-    public Integer contar () throws SQLException{
+
+    public Integer contar() throws SQLException {
         String m = clazz.getSimpleName().toLowerCase();
-        m=m.substring(0,m.length()-1)+ m.substring(m.length());
+        m = m.substring(0, m.length() - 1) + m.substring(m.length());
         //System.out.println(m);
-        PreparedStatement stmt = getConexion().prepareStatement(contar+m+ " ) from "+clazz.getSimpleName().toLowerCase());
-        
-        ResultSet re= stmt.executeQuery();
-        Integer a=0;
-        while(re.next()){
+        PreparedStatement stmt = getConexion().prepareStatement(contar + m + " ) from " + clazz.getSimpleName().toLowerCase());
+
+        ResultSet re = stmt.executeQuery();
+        Integer a = 0;
+        while (re.next()) {
             a = (Integer) re.getInt(1);
         }
         if (a == null) {
-            a=0;
+            a = 0;
         }
         return a;
     }
-     public ListaEnlazada objetenerDato(String atributo,Object o,Boolean m) throws SQLException{
-         String comando;
-         ListaEnlazada lista = new ListaEnlazada();
-         if (m) {
-              comando = "select "+atributo+" from "+clazz.getSimpleName().toLowerCase()+" where "+atributo+" = "+o.toString();
-              System.out.println(comando);
-         }else{
-           comando = "select "+atributo+" from "+clazz.getSimpleName().toLowerCase()+" where "+atributo+" = '"+o.toString()+"'";
-             System.out.println(comando);
-         } 
+
+    public ListaEnlazada objetenerDato(String atributo, Object o, Boolean m) throws SQLException {
+        String comando;
+        ListaEnlazada lista = new ListaEnlazada();
+        if (m) {
+            comando = "select " + atributo + " from " + clazz.getSimpleName().toLowerCase() + " where " + atributo + " = " + o.toString();
+            System.out.println(comando);
+        } else {
+            comando = "select " + atributo + " from " + clazz.getSimpleName().toLowerCase() + " where " + atributo + " = '" + o.toString() + "'";
+            System.out.println(comando);
+        }
         PreparedStatement stmt = getConexion().prepareStatement(comando);
-        ResultSet re= stmt.executeQuery();
-        int contador=0;
-        while(re.next()){
+        ResultSet re = stmt.executeQuery();
+        int contador = 0;
+        while (re.next()) {
             lista.insertarCabecera(re.getString(contador));
             contador++;
         }
-         return lista;
-        }
-     
-    public void commit() throws SQLException{
-          PreparedStatement stmt = getConexion().prepareStatement("commit");
-          stmt.executeQuery();
+        return lista;
     }
- 
+
+    public void commit() throws SQLException {
+        PreparedStatement stmt = getConexion().prepareStatement("commit");
+        stmt.executeQuery();
+    }
+
     public AdaptadorDao(Class clazz) {
         this.clazz = clazz;
         this.conexion = SQLclass.getConection();
@@ -93,7 +93,7 @@ public class AdaptadorDao<T> implements InterfazDao<T>{
     public ListaEnlazada<T> listar() {
         ListaEnlazada<T> lista = new ListaEnlazada<>();
         try {
-            String seleccion = "select * from "+clazz.getSimpleName().toLowerCase();
+            String seleccion = "select * from " + clazz.getSimpleName().toLowerCase();
             PreparedStatement stmt = getConexion().prepareStatement(seleccion);
             ResultSet resultSet = stmt.executeQuery();
             ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
@@ -105,8 +105,8 @@ public class AdaptadorDao<T> implements InterfazDao<T>{
             while (resultSet.next()) {
                 T obj = (T) clazz.getConstructor().newInstance();
                 for (int i = 0; i < columna.length; i++) {
-                    Object objeto = resultSet.getObject(i+1);
-                    System.out.println("nuevo"+"\n"+"\t"+ columna[i]+"\n"+objeto.toString()+"\t");
+                    Object objeto = resultSet.getObject(i + 1);
+                    System.out.println("nuevo" + "\n" + "\t" + columna[i] + "\n" + objeto.toString() + "\t");
                     if (objeto != null && objeto.getClass().getName().equals("java.sql.Timestamp")) {
                         java.sql.Timestamp aux = (java.sql.Timestamp) objeto;
                         java.util.Date fecha = new Date(aux.getTime());
@@ -128,16 +128,16 @@ public class AdaptadorDao<T> implements InterfazDao<T>{
     @Override
     public void guardar(T dato) throws Exception {
         String[] columnas = columnas();
-   String comando= "insert into " + clazz.getSimpleName().toLowerCase() + " ";
+        String comando = "insert into " + clazz.getSimpleName().toLowerCase() + " ";
         String variables = "";
         String datos = "";
         //String m = "  ' ";
         System.out.println("*******************");
-        System.out.println(tipoDato(columnas[1],dato));
-         System.out.println(tipoDato(columnas[0],dato));
-      System.out.println(tipoDato(columnas[2],dato));
-for (int i = 0; i < columnas.length; i++) {
-            if (i == columnas.length-1) {
+        System.out.println(tipoDato(columnas[1], dato));
+        System.out.println(tipoDato(columnas[0], dato));
+        System.out.println(tipoDato(columnas[2], dato));
+        for (int i = 0; i < columnas.length; i++) {
+            if (i == columnas.length - 1) {
                 variables += columnas[i]; //id, nombres, external_id, ...
                 System.out.println(variables);
                 datos += tipoDato(columnas[i], dato);//0, "casa", "343-545
@@ -145,11 +145,33 @@ for (int i = 0; i < columnas.length; i++) {
             } else {
                 System.out.println(datos);
                 variables += columnas[i] + " , ";
-               datos += tipoDato(columnas[i], dato) +",";
+                datos += tipoDato(columnas[i], dato) + ",";
             }
         }
 
-    comando += "(" + variables + ") values(" + datos + ")";
+        comando += "(" + variables + ") values(" + datos + ")";
+        try {
+            PreparedStatement stmt = getConexion().prepareStatement(comando);
+            stmt.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("Error en guardar " + e);
+        }
+
+        System.out.println(comando);
+        commit();
+    }
+
+    public void modificar(String atributo, Integer id, String valor) throws Exception {
+
+        //objeto a modificar ya lo envian desde el metodo
+        //reemplazar por valores nuevos
+        //enviar el comando
+        String[] columnas = columnas();
+        String comando = "update  " + clazz.getSimpleName().toLowerCase() + " SET ";
+        //String variables = "";
+        String m = clazz.getSimpleName().toLowerCase();
+        m = m.substring(0, m.length() - 1) + m.substring(m.length());
+        comando += atributo + "=" + valor + " where " + m + " = " + id.toString();
         try {
             PreparedStatement stmt = getConexion().prepareStatement(comando);
             stmt.executeUpdate();
@@ -162,50 +184,13 @@ for (int i = 0; i < columnas.length; i++) {
     }
 
     @Override
-    public void modificar(T dato) throws Exception {
-
-        //objeto a modificar ya lo envian desde el metodo
-        //reemplazar por valores nuevos
-        //enviar el comando
-        String[] columnas = columnas();
-        String comando = "update  " + clazz.getSimpleName().toLowerCase() + " SET ";
-        //String variables = "";
-        Object id = null;
-        String datos = "";
-        for (int i = 0; i < columnas.length; i++) {
-            if (!columnas[i].equalsIgnoreCase("id")) {
-                if (i == columnas.length - 1) {
-                    //variables += columnas[i];//id, nombres, external_id, ...
-                    datos += columnas[i] + "=" + tipoDato(columnas[i], dato);//0, "casa", "343-545
-                } else {
-                    //variables += columnas[i] + " , ";
-                    datos += columnas[i] + "=" + tipoDato(columnas[i], dato) + " , ";//0, "casa", "343-545
-                }
-            } else {
-                id = tipoDato(columnas[i], dato);
-            }
-
-        }
-        comando += datos + " where id = " + id.toString();
-        try {
-            PreparedStatement stmt = getConexion().prepareStatement(comando);
-            stmt.executeUpdate();
-        } catch (Exception e) {
-            System.out.println("Error en guardar " + e);
-        }
-
-        System.out.println(comando);
- commit();
-    }
-
-    @Override
     public T obtener(Integer id) throws Exception {
         T obj = null;
         String[] columna = columnas();
         String m = clazz.getSimpleName().toLowerCase();
-        m=m.substring(0,m.length()-1)+ m.substring(m.length());
+        m = m.substring(0, m.length() - 1) + m.substring(m.length());
         System.out.println(m);
-        PreparedStatement stmt = getConexion().prepareStatement(" select * from "+clazz.getSimpleName().toLowerCase() + " where id_"+m+" = "+ id.toString());
+        PreparedStatement stmt = getConexion().prepareStatement(" select * from " + clazz.getSimpleName().toLowerCase() + " where id_" + m + " = " + id.toString());
         ResultSet resultSet = stmt.executeQuery();
         while (resultSet.next()) {
             obj = (T) clazz.getConstructor().newInstance();
@@ -227,7 +212,7 @@ for (int i = 0; i < columnas.length; i++) {
     public String[] columnas() {
         String[] columna = null;
         try {
-        String seleccion = "select * from "+clazz.getSimpleName().toLowerCase();
+            String seleccion = "select * from " + clazz.getSimpleName().toLowerCase();
             PreparedStatement stmt = getConexion().prepareStatement(seleccion);
             ResultSet resultSet = stmt.executeQuery();
             ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
@@ -267,5 +252,5 @@ for (int i = 0; i < columnas.length; i++) {
 
         return aux;
     }
-   
+
 }
