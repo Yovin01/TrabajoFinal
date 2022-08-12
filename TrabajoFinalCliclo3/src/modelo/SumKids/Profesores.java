@@ -16,21 +16,17 @@ public class Profesores extends Empleados {
     private String especialidad = null;
     private Integer id_profesore = null;
     private Integer id_empleado = null;
-
+// constructor normal
     public Profesores(String especialidad, String nombres, String apellidos, String identificacion, String celular, char Ge, String direccion, TipoEmpleado cargo, String correo) {
         super(nombres, apellidos, identificacion, celular, Ge, direccion, cargo, correo);
         this.especialidad = especialidad;
     }
-   
-
-    public Profesores(String especialidad) {
-        this.especialidad = especialidad;          
-    } 
-
+  
+//constructor para base de datos
   public Profesores(){
       
   }
-
+// constructor para retorno de base de datos
     public Profesores(Integer id,TipoEmpleado cargo, Integer id_empleado, String correo,  String apellidos, String nombres, String identificacion, String celular, char gene, String direccion, String especailida) {
         super(cargo, id_empleado, correo, apellidos, nombres, identificacion, celular, gene, direccion);
           this.especialidad = especailida;

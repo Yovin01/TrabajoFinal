@@ -171,7 +171,7 @@ public class AdaptadorDao<T> implements InterfazDao<T> {
         //String variables = "";
         String m = clazz.getSimpleName().toLowerCase();
         m = m.substring(0, m.length() - 1) + m.substring(m.length());
-        comando += atributo + "=" + valor + " where " + m + " = " + id.toString();
+        comando += atributo + "='" + valor + "' where Id_" + m + " = " + id.toString();
         try {
             PreparedStatement stmt = getConexion().prepareStatement(comando);
             stmt.executeUpdate();

@@ -55,4 +55,8 @@ public class controladorGerente  extends AdaptadorDao<Gerente>{
         }
      
      
+     
+     
+     
+     
 }

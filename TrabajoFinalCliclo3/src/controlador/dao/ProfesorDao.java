@@ -62,7 +62,7 @@ public class ProfesorDao extends AdaptadorDao<Profesores> {
         EmpleadoDao e = new EmpleadoDao();
         String[] columnas = super.columnas();      
    String comando= "insert into Profesores";
-   Empleados q = new Empleados(p.getNombres(),p.getApellidos(),p.getIdentificacion(),p.getCelular(),p.getGenero(),p.getDireccion(),TipoEmpleado.valueOf(p.getCargo()),p.getCorreo(),p.getConstraseña());
+   Empleados q = new Empleados(p.getNombres(),p.getApellidos(),p.getIdentificacion(),p.getCelular(),p.getGenero(),p.getDireccion(),TipoEmpleado.valueOf(p.getCargo()),p.getCorreo(),p.getPassword());
         String variables = "";
         System.out.println("*******************");
         
@@ -74,7 +74,7 @@ for (int i = 0; i < columnas.length; i++) {
             }
         }
    e.guardarEmpleado(q);
-    comando += "(" + variables + ") values("+e.contar()+","+super.contar()+1+",'"+p.getEspecialidad()+"')";
+    comando += "(" + variables + ") values("+super.contar()+1+","+e.contar()+",'"+p.getEspecialidad()+"')";
             try {
             PreparedStatement stmt = getConexion().prepareStatement(comando);
             stmt.executeUpdate();
@@ -141,11 +141,14 @@ for (int i = 0; i < columnas.length; i++) {
     }
     public static void main(String[] args) throws SQLException, Exception {
         ProfesorDao m = new ProfesorDao();
-//        Profesores p = new Profesores("Matematicas","Juan","marquez","222222","0987564561",'M',"colinas",TipoEmpleado.P_PRO,"WWWWW","WERWRE");
-//        m.guardarProfesor(p);
-          Profesores p = new Profesores();
-          System.out.println(m.getProfesores("Nombre", (Object)"Juan",false));
+       // String especialidad, String nombres, String apellidos, String identificacion, String celular, char Ge, String direccion, TipoEmpleado cargo, String correo
+       
+        Profesores p = new Profesores("Literatura","Marco","torres","44444444","013423422",'M',"colinas vvvv",TipoEmpleado.P_PRO,"WWWWW");
+        m.guardarProfesor(p);
+         //Profesores p = new Profesores();
+         //System.out.println(m.getProfesores("Nombre", (Object)"Juan",false));
          // m.getProfesores("Nombre", (Object)"Juan",false);
+         // m.modificar("Correo",1, "holaaa.@123");
     }
 
 

@@ -334,17 +334,17 @@ public class FrmProfesor extends javax.swing.JFrame {
         char g = 'g';
         String contrasena = "secretaria";
         limpiar();
-        Profesores prof = new Profesores( especialidad,nombre, apellidos,identificacion,  celular,g,  direccion,m, correo,contrasena );
+        //Profesores prof = new Profesores( especialidad,nombre, apellidos,identificacion,  celular,g,  direccion,m, correo,contrasena );
         
         ProfesorDao p = new ProfesorDao();
         try {
-            secretaria.registrar(prof);
+         //   secretaria.registrar(prof);
             JOptionPane.showMessageDialog(this, "Creado con exito");
         } catch (Exception ex) {
             Logger.getLogger(FrmProfesor.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(this, "Fallo al crear");
         }
-        tblProfesor.setModel(p.getTableProfesores());
+       // tblProfesor.setModel(p.getTableProfesores());
     }//GEN-LAST:event_btnguardarActionPerformed
 
     /**
