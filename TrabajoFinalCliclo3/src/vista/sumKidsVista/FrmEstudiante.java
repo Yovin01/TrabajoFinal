@@ -16,6 +16,7 @@ public class FrmEstudiante extends javax.swing.JFrame {
     public FrmEstudiante() {
         initComponents();
         this.setLocationRelativeTo(null);
+        
     }
 
     /**
