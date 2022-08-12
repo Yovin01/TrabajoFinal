@@ -81,6 +81,9 @@ public class AdaptadorDao<T> implements InterfazDao<T> {
         ALL_ID += clazz.getSimpleName().toLowerCase() + " where id =";
     }
 
+    public AdaptadorDao() {
+    }
+
     public Connection getConexion() {
         return conexion;
     }
