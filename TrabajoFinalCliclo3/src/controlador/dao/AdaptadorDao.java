@@ -49,6 +49,26 @@ public class AdaptadorDao<T> implements InterfazDao<T>{
         }
         return a;
     }
+     public ListaEnlazada objetenerDato(String atributo,Object o,Boolean m) throws SQLException{
+         String comando;
+         ListaEnlazada lista = new ListaEnlazada();
+         if (m) {
+              comando = "select "+atributo+" from "+clazz.getSimpleName().toLowerCase()+" where "+atributo+" = "+o.toString();
+              System.out.println(comando);
+         }else{
+           comando = "select "+atributo+" from "+clazz.getSimpleName().toLowerCase()+" where "+atributo+" = '"+o.toString()+"'";
+             System.out.println(comando);
+         } 
+        PreparedStatement stmt = getConexion().prepareStatement(comando);
+        ResultSet re= stmt.executeQuery();
+        int contador=0;
+        while(re.next()){
+            lista.insertarCabecera(re.getString(contador));
+            contador++;
+        }
+         return lista;
+        }
+     
     public void commit() throws SQLException{
           PreparedStatement stmt = getConexion().prepareStatement("commit");
           stmt.executeQuery();
