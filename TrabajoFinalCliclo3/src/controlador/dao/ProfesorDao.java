@@ -5,6 +5,7 @@
 package controlador.dao;
 
 import controlador.conexion.SQLclass;
+import controlador.tda.lista.ListaEnlazada;
 
 import java.sql.Connection;
 import java.sql.Statement;
@@ -61,7 +62,7 @@ public class ProfesorDao extends AdaptadorDao<Profesores> {
         EmpleadoDao e = new EmpleadoDao();
         String[] columnas = super.columnas();      
    String comando= "insert into Profesores";
-   Empleados q = new Empleados(p.getNombres(),p.getApellidos(),p.getIdentificacion(),p.getCelular(),p.getGenero(),p.getDireccion(),TipoEmpleado.valueOf(p.getCargo()),p.getCorreo(),p.getConstraseña());
+   Empleados q = new Empleados(p.getNombres(),p.getApellidos(),p.getIdentificacion(),p.getCelular(),p.getGenero(),p.getDireccion(),TipoEmpleado.valueOf(p.getCargo()),p.getCorreo(),p.getPassword());
         String variables = "";
         System.out.println("*******************");
         
@@ -73,7 +74,7 @@ for (int i = 0; i < columnas.length; i++) {
             }
         }
    e.guardarEmpleado(q);
-    comando += "(" + variables + ") values("+e.contar()+","+super.contar()+1+",'"+p.getEspecialidad()+"')";
+    comando += "(" + variables + ") values("+super.contar()+1+","+e.contar()+",'"+p.getEspecialidad()+"')";
             try {
             PreparedStatement stmt = getConexion().prepareStatement(comando);
             stmt.executeUpdate();
@@ -84,11 +85,70 @@ for (int i = 0; i < columnas.length; i++) {
         System.out.println(comando);
         commit();
     }
-    
+   //    public void guardarProfesor(Object dato) throws Exception {
+//        Profesores p = (Profesores) dato;
+//        EmpleadoDao e = new EmpleadoDao();
+//        String[] columnas = super.columnas();
+//        String comando = "insert into Profesores";
+//        Empleados q = new Empleados(p.getNombres(), p.getApellidos(), p.getIdentificacion(), p.getCelular(), p.getGenero(), p.getDireccion(), TipoEmpleado.valueOf(p.getCargo()), p.getCorreo(), p.getConstraseña());
+//        String variables = "";
+//        System.out.println("*******************");
+//        for (int i = 0; i < columnas.length; i++) {
+//            if (i == columnas.length - 1) {
+//                variables += columnas[i];
+//            } else {
+//                variables += columnas[i] + " , ";
+//            }
+//        }
+//        e.guardarEmpleado(q);
+//        comando += "(" + variables + ") values(" + e.contar() + "," + super.contar() + 1 + ",'" + p.getEspecialidad() + "')";
+//        try {
+//            PreparedStatement stmt = getConexion().prepareStatement(comando);
+//            stmt.executeUpdate();
+//        } catch (SQLException ex) {
+//            System.out.println("Error en guardar " + ex);
+//        }
+//
+//        System.out.println(comando);
+//        commit();
+//    }
+//
+       public ListaEnlazada<Profesores> getProfesores(String atributo, Object o, Boolean m) {
+        ListaEnlazada<Profesores> listaProfesores = new ListaEnlazada<>();
+
+        String sql;
+        if (m) {
+            sql = "SELECT * FROM empleados,profesores where profesores.Id_empleado = empleados.Id_empleado and " + atributo + " = " + o;
+            System.out.println(sql);
+        } else {
+            sql = "SELECT * FROM empleados,profesores where profesores.Id_empleado = empleados.Id_empleado and " + atributo + " ='" + o + "'";
+            System.out.println(sql);
+        }
+
+        try {
+            PreparedStatement pps = getConexion().prepareStatement(sql);
+            ResultSet resultado = pps.executeQuery();
+            while (resultado.next()) {
+                Profesores profesor = new Profesores(resultado.getInt(10), TipoEmpleado.P_PRO, Integer.parseInt(resultado.getString(0)), resultado.getString(8), resultado.getString(2), resultado.getString(1),resultado.getString(3),resultado.getString(4) ,resultado.getString(5).charAt(0), resultado.getString(6), resultado.getString(12));
+                listaProfesores.insertarCabecera(profesor);
+            }
+
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+
+        return listaProfesores;
+    }
     public static void main(String[] args) throws SQLException, Exception {
         ProfesorDao m = new ProfesorDao();
-        Profesores p = new Profesores("Matematicas","Juan","marquez","222222","0987564561",'M',"colinas",TipoEmpleado.P_PRO,"WWWWW","WERWRE");
+       // String especialidad, String nombres, String apellidos, String identificacion, String celular, char Ge, String direccion, TipoEmpleado cargo, String correo
+       
+        Profesores p = new Profesores("Literatura","Marco","torres","44444444","013423422",'M',"colinas vvvv",TipoEmpleado.P_PRO,"WWWWW");
         m.guardarProfesor(p);
+         //Profesores p = new Profesores();
+         //System.out.println(m.getProfesores("Nombre", (Object)"Juan",false));
+         // m.getProfesores("Nombre", (Object)"Juan",false);
+         // m.modificar("Correo",1, "holaaa.@123");
     }
 
 

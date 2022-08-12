@@ -26,6 +26,7 @@ public class Persona {
     public char getGenero() {
         return genero;
     }
+
     
 
     public void setGenero(char genero) {

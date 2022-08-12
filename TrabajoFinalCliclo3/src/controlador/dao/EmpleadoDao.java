@@ -64,7 +64,7 @@ for (int i = 0; i < columnas.length; i++) {
                 variables += columnas[i] + " , ";
             }
         }
-    comando += "(" + variables + ") values("+super.contar()+1+",'"+e.getNombres()+"','"+e.getApellidos()+"','"+e.getIdentificacion()+"','"+e.getCelular()+"','"+e.getGenero()+"','"+e.getDireccion()+"','"+e.getCargo()+"','"+e.getCorreo()+"')" ; 
+    comando += " values("+super.contar()+1+",'"+e.getNombres()+"','"+e.getApellidos()+"','"+e.getIdentificacion()+"','"+e.getCelular()+"','"+e.getGenero()+"','"+e.getDireccion()+"','"+e.getCargo()+"','"+e.getCorreo()+"','"+e.getPassword()+"')" ; 
          try {
             PreparedStatement stmt = getConexion().prepareStatement(comando);
             stmt.executeUpdate();
@@ -75,6 +75,7 @@ for (int i = 0; i < columnas.length; i++) {
          commit();
     }
         public static void main(String[] args) throws SQLException, Exception {
+            
           EmpleadoDao e = new EmpleadoDao();
           Empleados m = new Empleados("Juan","marquez","222222","0987564561",'M',"colinas",TipoEmpleado.P_PRO,"WWWWW","WERWRE");
          e.guardarEmpleado(m);

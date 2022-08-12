@@ -12,18 +12,36 @@ import modelo.enums.TipoEmpleado;
  */
 public class Empleados extends Persona {
 
-    private TipoEmpleado cargo;
-    private Integer id_empleado;
-    private String correo;
-    private String password;
+    private TipoEmpleado cargo=null;
+    private Integer id_empleado=null;
+    private String correo=null;
+    private String password=null;
 
-    public Empleados(TipoEmpleado cargo, Integer id_empleado, String correo, String constraseña) {
+    public Empleados(TipoEmpleado cargo, Integer id_empleado, String correo, String pass) {
         this.cargo = cargo;
         this.id_empleado = id_empleado;
         this.correo = correo;
-        this.password = constraseña;
+        this.password = pass;
     }
-                       
+
+    public Empleados(TipoEmpleado cargo, Integer id_empleado, String correo, String password, String apellidos, String nombres, String identificacion, String celular, char gene, String direccion) {
+        super(apellidos, nombres, identificacion, celular, gene, direccion);
+        this.cargo = cargo;
+        this.id_empleado = id_empleado;
+        this.correo = correo;
+        this.password = password;
+    }
+       public Empleados(TipoEmpleado cargo, Integer id_empleado, String correo, String apellidos, String nombres, String identificacion, String celular, char gene, String direccion) {
+        super(apellidos, nombres, identificacion, celular, gene, direccion);
+        this.cargo = cargo;
+        this.id_empleado = id_empleado;
+        this.correo = correo;
+    }
+           public Empleados(String nombres ,  String apellidos  ,   String identificacion,  String celular,char Ge , String direccion ,TipoEmpleado cargo, String correo) {
+        super(apellidos, nombres, identificacion,celular, Ge,direccion);
+        this.cargo = cargo;
+        this.correo = correo;
+    }               
     public Empleados(String nombres ,  String apellidos  ,   String identificacion,  String celular,char Ge , String direccion ,TipoEmpleado cargo, String correo, String constraseña) {
         super(apellidos, nombres, identificacion,celular, Ge,direccion);
         this.cargo = cargo;
@@ -31,13 +49,15 @@ public class Empleados extends Persona {
         this.password = constraseña;
     }
 
-    public String getConstraseña() {
+    public String getPassword() {
         return password;
     }
 
-    public void setConstraseña(String constraseña) {
-        this.password = constraseña;
+    public void setPassword(String password) {
+        this.password = password;
     }
+
+ 
     
    public Empleados(){
        
