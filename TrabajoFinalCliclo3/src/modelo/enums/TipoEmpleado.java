@@ -10,6 +10,6 @@ package modelo.enums;
  * @author User
  */
 public enum TipoEmpleado {
-    PROFESOR,GERENTE,SECRETARIA;
+    P_PRO,G_GER,A_SEC;
     
 }

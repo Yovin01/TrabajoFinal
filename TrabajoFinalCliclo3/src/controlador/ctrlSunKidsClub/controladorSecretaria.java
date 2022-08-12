@@ -24,18 +24,5 @@ public class controladorSecretaria {
         private RepresentanteDao repr = new RepresentanteDao();
         private EmpleadoDao empl = new EmpleadoDao();
          private EstudianteDao estu = new EstudianteDao();
-          
-//    public void registrar(Profesores v) {
-//        try {
-//            
-//            PreparedStatement PS = Co.prepareStatement("INSERT INTO PROFESORES(ID_PROFESOR,ID_EMPLEADO,ESPECIALIDAD) VALUES (?,?,?)");
-//            PS.setInt(1, v.getId_profesor());
-//            PS.setInt(2, v.getId_empleado());
-//            PS.setString(3, v.getEspecialidad());
-//            PS.executeUpdate();
-//            JOptionPane.showMessageDialog(null, "Profesor agregado correctamente");
-//        } catch (SQLException ex) {
-//            JOptionPane.showMessageDialog(null, "Datos erroneos");
-//        }
-//    }
+           
 }

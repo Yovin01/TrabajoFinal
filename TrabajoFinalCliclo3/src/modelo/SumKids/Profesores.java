@@ -16,11 +16,14 @@ public class Profesores extends Empleados {
     private String especialidad;
     private Integer id_profesore;
     private Integer id_empleado;
+
+    public Profesores(String especialidad, String nombres, String apellidos, String identificacion, String celular, char Ge, String direccion, TipoEmpleado cargo, String correo, String constraseña) {
+        super(nombres, apellidos, identificacion, celular, Ge, direccion, cargo, correo, constraseña);
+        this.especialidad = especialidad;
+    }
    
 
-    public Profesores(Integer id_profesor, Integer id_empleado,String especialidad) {
-        this.id_profesore = id_profesor;
-        this.id_empleado = id_empleado;
+    public Profesores(String especialidad) {
         this.especialidad = especialidad;          
     }
 

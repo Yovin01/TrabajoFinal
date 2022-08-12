@@ -12,16 +12,16 @@ import java.util.Date;
  */
 public class Factura {
 
-    private Integer id_factura;
-    private Integer id_representante;
-    private Double pension;
-    private Date fecha;
-    private String nombre;
-    private String apellido;
-    private String direccion;
-    private String identificacion;
-    private String celular;
-    private String detalle;
+    private Integer id_factura=null;
+    private Integer id_representante=null;
+    private Double pension=null;
+    private Date fecha=null;
+    private String nombre=null;
+    private String apellido=null;
+    private String direccion=null;
+    private String identificacion=null;
+    private String celular=null;
+    private String detalle=null;
 
     public Factura() {
     }

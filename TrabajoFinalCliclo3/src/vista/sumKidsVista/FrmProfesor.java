@@ -167,7 +167,7 @@ public class FrmProfesor extends javax.swing.JFrame {
         btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
         btnEliminar.setText("Eliminar");
         jPanel2.add(btnEliminar);
-        btnEliminar.setBounds(320, 150, 59, 23);
+        btnEliminar.setBounds(320, 150, 70, 23);
 
         btnEditar.setBackground(new java.awt.Color(0, 0, 204));
         btnEditar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -309,7 +309,7 @@ public class FrmProfesor extends javax.swing.JFrame {
 
     private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarActionPerformed
         String especialidad = txtEspecialidad.getText();
-        TipoEmpleado m = TipoEmpleado.PROFESOR;
+        TipoEmpleado m = TipoEmpleado.P_PRO;
         String correo = txtCorreo.getText();
         String apellidos = txtApellido.getText();
         String nombre = txtNombre.getText();

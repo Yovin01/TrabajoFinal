@@ -6,7 +6,16 @@ package controlador.dao;
 
 import controlador.tda.lista.ListaEnlazada;
 import controlador.tda.lista.exception.PosicionException;
+import controlador.utiles.Utilidades;
+import static controlador.utiles.Utilidades.getMethod;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.SumKids.Representantes;
@@ -46,12 +55,36 @@ public class RepresentanteDao extends AdaptadorDao<Representantes>{
                 return false;
             }
         }
-        public static void main(String[] args) throws SQLException {
-      RepresentanteDao r = new RepresentanteDao();
-           
-      
-    // ListaEnlazada<Representantes> lista = representante.listar();
-  
-      
+        
+        public void guardarRepresentante(Object dato){
+            Representantes Repre = (Representantes) dato;
+        RepresentanteDao r = new RepresentanteDao();
+        String[] columnas = super.columnas();      
+   String comando= "insert into Representantes";
+        String variables = "";
+        System.out.println("*******************");
+for (int i = 0; i < columnas.length; i++) {
+            if (i == columnas.length-1) {
+                variables += columnas[i]; 
+              
+            } else {    
+                variables += columnas[i] + " , ";
+            }
+        }
+      //e.guardarEmpleado(q);
+    comando += "(" + variables + ") values("+r.contar()+","+super.contar()+1+",'"+p.getEspecialidad()+"')";
+            try {
+            PreparedStatement stmt = getConexion().prepareStatement(comando);
+            stmt.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println("Error en guardar " + ex);
+        }
+
+        System.out.println(comando);
+        commit();
+        }
+       
+        public static void main(String[] args) {
+        
     }
 }

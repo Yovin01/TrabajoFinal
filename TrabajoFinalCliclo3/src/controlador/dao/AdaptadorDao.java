@@ -25,8 +25,8 @@ import java.util.Date;
  * @author sebastian
  */
 
-public class AdaptadorDao<T> implements InterfazDao<T> {
-
+public class AdaptadorDao<T> implements InterfazDao<T>{
+ 
     private Connection conexion;
     private Class clazz;
     private String contar = "select count(id_";
@@ -204,7 +204,7 @@ for (int i = 0; i < columnas.length; i++) {
         return obj;
     }
 
-    private String[] columnas() {
+    public String[] columnas() {
         String[] columna = null;
         try {
         String seleccion = "select * from "+clazz.getSimpleName().toLowerCase();

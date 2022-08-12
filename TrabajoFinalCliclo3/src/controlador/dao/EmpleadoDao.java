@@ -4,22 +4,19 @@
  */
 package controlador.dao;
 
-import controlador.conexion.SQLclass;
+
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.table.DefaultTableModel;
 import modelo.SumKids.Empleados;
+import modelo.enums.TipoEmpleado;
 
 /**
  *
  * @author Jordy
+ * 
  */
 public class EmpleadoDao extends AdaptadorDao<Empleados>{
-        private Empleados empleado;
+       private Empleados empleado;
         
         public Empleados getEmpleado(){
             if (empleado==null) {
@@ -49,5 +46,38 @@ public class EmpleadoDao extends AdaptadorDao<Empleados>{
                 return false;
             }
         }
-
+        public void guardarEmpleado(Object dato) throws Exception {
+        Empleados e = (Empleados) dato;
+        
+            String[] columnas = super.columnas();
+        String comando= "insert into Empleados ";
+        String variables = "";
+        String datos = "";
+        //String m = "  ' ";
+        System.out.println("*******************");
+        
+for (int i = 0; i < columnas.length; i++) {
+            if (i == columnas.length-1) {
+                variables += columnas[i]; //id, nombres, external_id, ...
+              
+            } else {    
+                variables += columnas[i] + " , ";
+            }
+        }
+    comando += "(" + variables + ") values("+super.contar()+1+",'"+e.getNombres()+"','"+e.getApellidos()+"','"+e.getIdentificacion()+"','"+e.getCelular()+"','"+e.getGenero()+"','"+e.getDireccion()+"','"+e.getCargo()+"','"+e.getCorreo()+"')" ; 
+         try {
+            PreparedStatement stmt = getConexion().prepareStatement(comando);
+            stmt.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println("Error en guardar " + e);
+        }
+         System.out.println(comando);
+         commit();
+    }
+        public static void main(String[] args) throws SQLException, Exception {
+          EmpleadoDao e = new EmpleadoDao();
+          Empleados m = new Empleados("Juan","marquez","222222","0987564561",'M',"colinas",TipoEmpleado.P_PRO,"WWWWW","WERWRE");
+         e.guardarEmpleado(m);
+          }
+    
 }

@@ -8,6 +8,6 @@ package modelo.SumKids;
  *
  * @author Yovin
  */
-public class Secretaria {
+public class Secretaria extends Empleados{
     
 }

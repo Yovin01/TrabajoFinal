@@ -6,25 +6,33 @@ package controlador.dao;
 
 import controlador.conexion.SQLclass;
 import controlador.tda.lista.ListaEnlazada;
-import java.lang.System.Logger;
-import java.lang.System.Logger.Level;
+import controlador.utiles.Utilidades;
+import static controlador.utiles.Utilidades.getMethod;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import javax.swing.table.DefaultTableModel;
 import modelo.SumKids.Profesores;
 import java.sql.PreparedStatement;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import modelo.SumKids.Representantes;
-
+import controlador.dao.InterfazDao;
+import modelo.SumKids.Empleados;
+import modelo.enums.TipoEmpleado;
 
 
 
 /**
  *
  * @author Jordy
+ * @param <T>
  */
-public class ProfesorDao extends AdaptadorDao<Profesores>{
+public class ProfesorDao extends AdaptadorDao<Profesores> {
     private Profesores profesor;
         SQLclass s = new SQLclass();
      Connection con = s.getConection();
@@ -88,12 +96,43 @@ public class ProfesorDao extends AdaptadorDao<Profesores>{
 
         return modelo;
     }
-         public static void main(String[] args) throws SQLException, Exception {
-         RepresentanteDao p = new RepresentanteDao();
-          //ListaEnlazada<>
-             System.out.println(p);
-          Representantes m = new Representantes("12312323",p.contar()+1);
-          p.guardar(m);
-          
+         
+    public void guardarProfesor(Object dato) throws Exception {
+       Profesores p =(Profesores) dato;
+        EmpleadoDao e = new EmpleadoDao();
+        String[] columnas = super.columnas();      
+   String comando= "insert into Profesores";
+   Empleados q = new Empleados(p.getNombres(),p.getApellidos(),p.getIdentificacion(),p.getCelular(),p.getGenero(),p.getDireccion(),TipoEmpleado.valueOf(p.getCargo()),p.getCorreo(),p.getConstraseña());
+        String variables = "";
+        System.out.println("*******************");
+        
+for (int i = 0; i < columnas.length; i++) {
+            if (i == columnas.length-1) {
+                variables += columnas[i]; 
+              
+            } else {    
+                variables += columnas[i] + " , ";
+            }
+        }
+   e.guardarEmpleado(q);
+    comando += "(" + variables + ") values("+e.contar()+","+super.contar()+1+",'"+p.getEspecialidad()+"')";
+            try {
+            PreparedStatement stmt = getConexion().prepareStatement(comando);
+            stmt.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println("Error en guardar " + ex);
+        }
+
+        System.out.println(comando);
+        commit();
     }
+    
+    public static void main(String[] args) throws SQLException, Exception {
+        ProfesorDao m = new ProfesorDao();
+        Profesores p = new Profesores("Matematicas","Juan","marquez","222222","0987564561",'M',"colinas",TipoEmpleado.P_PRO,"WWWWW","WERWRE");
+        m.guardarProfesor(p);
+    }
+
+
+   
   }

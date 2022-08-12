@@ -10,33 +10,45 @@ package modelo.SumKids;
  */
 public class Persona {
 
-    private String apellidos;
-    private String nombres;
-    private String identificacion;
-    private String celular;
-        private char sexo;
-    private String direccion;
-
+    private String apellidos=null;
+    private String nombres=null;
+    private String identificacion=null;
+    private String celular=null;
+    private char genero;
+    private String direccion=null;
+   
     public Persona() {
     }
   public Persona(String ide) {
       this.identificacion= ide;
     }
-    public Persona(String apellidos, String nombres, String identificacion, char sexo, String direccion) {
-        this.apellidos = apellidos;
-        this.nombres = nombres;
-        this.identificacion = identificacion;
-        this.sexo = sexo;
-        this.direccion = direccion;
-    }
 
-    public Persona(String apellidos, String nombres, String identificacion, String celular, String direccion) {
+    public char getGenero() {
+        return genero;
+    }
+    
+
+    public void setGenero(char genero) {
+        this.genero = genero;
+    }
+  
+    public Persona(String apellidos, String nombres, String identificacion, String celular,char gene, String direccion) {
         this.apellidos = apellidos;
         this.nombres = nombres;
         this.identificacion = identificacion;
         this.celular = celular;
+ this.genero = gene;
         this.direccion = direccion;
     }
+
+    public Persona(String apellidos, String nombres, String identificacion, char genero, String direccion) {
+        this.apellidos = apellidos;
+        this.nombres = nombres;
+        this.identificacion = identificacion;
+        this.genero = genero;
+        this.direccion = direccion;
+    }
+    
 
     public String getApellidos() {
         return apellidos;
