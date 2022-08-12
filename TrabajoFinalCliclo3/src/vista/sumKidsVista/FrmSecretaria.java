@@ -90,8 +90,6 @@ public class FrmSecretaria extends javax.swing.JFrame {
         jLabel8.setText("Sexo:");
         jPanel1.add(jLabel8);
         jLabel8.setBounds(20, 250, 90, 20);
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-        });
         jPanel1.add(jTextField2);
         jTextField2.setBounds(210, 120, 100, 24);
         jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
