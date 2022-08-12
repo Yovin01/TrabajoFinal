@@ -25,7 +25,7 @@ public class Profesores extends Empleados {
 
     public Profesores(String especialidad) {
         this.especialidad = especialidad;          
-    }
+    } 
 
   public Profesores(){
       
