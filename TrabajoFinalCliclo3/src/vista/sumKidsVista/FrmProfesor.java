@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import modelo.SumKids.Profesores;
 import modelo.enums.TipoEmpleado;
-import oracle.jdbc.diagnostics.SecuredLogger;
+
 
 /**
  *

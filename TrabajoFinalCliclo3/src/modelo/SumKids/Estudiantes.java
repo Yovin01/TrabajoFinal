@@ -4,6 +4,7 @@
  */
 package modelo.SumKids;
 
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -14,14 +15,14 @@ public class Estudiantes extends Persona{
     
     private Integer id_estudiante=null;
     private Integer id_representante=null;
-    private Date fechaNacimiento=null;
+    private Calendar fechaNacimiento=null;
     private Double pension=null;
     private Profesores profesor=null;
-    
+      
     public Estudiantes() {
     }
 
-    public Estudiantes(Integer id_estudiante, Integer id_representante, Date fecha, Profesores profesor, String apellidos, String nombres, String identificacion, char sexo, String direccion) {
+    public Estudiantes(Integer id_estudiante, Integer id_representante, Calendar fecha, Profesores profesor, String apellidos, String nombres, String identificacion, char sexo, String direccion) {
         super(apellidos, nombres, identificacion, sexo, direccion);
         this.id_estudiante = id_estudiante;
         this.id_representante = id_representante;
@@ -55,14 +56,13 @@ public class Estudiantes extends Persona{
         this.id_representante = representante;
     }
 
-    public Date getFechaNacimiento() {
+    public Calendar getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
+    public void setFechaNacimiento(Calendar fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
-
 
 
     public Double getPension() {

@@ -9,6 +9,7 @@ import java.util.Date;
 import modelo.SumKids.Estudiantes;
 import java.sql.SQLException;
 import java.util.Calendar;
+import java.text.SimpleDateFormat;
 /**
  *
  * @author Jordy
@@ -51,6 +52,8 @@ public class EstudianteDao extends AdaptadorDao<Estudiantes>{
        String variables = "";
         System.out.println("*******************");
         
+        String fecha = p.getFechaNacimiento().get(Calendar.DATE)+"/"+ p.getFechaNacimiento().get(Calendar.MONTH)+"/"+ p.getFechaNacimiento().get(Calendar.YEAR);
+        
 for (int i = 0; i < columnas.length; i++) {
             if (i == columnas.length-1) {
                 variables += columnas[i]; 
@@ -58,7 +61,7 @@ for (int i = 0; i < columnas.length; i++) {
                 variables += columnas[i] + " , ";
             }
         }
-    comando += "(" + variables + ") values("+super.contar()+1+","+p.getId_representante()+"','"+p.getFechaNacimiento()+"',"+p.getProfesor().getId_profesor()+",'"+p.getApellidos()+"','"+p.getNombres()+"','"+p.getGenero()+"','"+p.getDireccion()+"')";
+    comando += "(" + variables + ") values("+super.contar()+1+","+p.getId_representante()+"',to_date('"+fecha+"','DD/MM/YYYY'),"+p.getProfesor().getId_profesor()+",'"+p.getApellidos()+"','"+p.getNombres()+"','"+p.getGenero()+"','"+p.getDireccion()+"')";
             
     try {
             PreparedStatement stmt = getConexion().prepareStatement(comando);
@@ -70,18 +73,17 @@ for (int i = 0; i < columnas.length; i++) {
         System.out.println(comando);
         commit();
     }
-    public static void main(String[] args) {
+     
+    public static void main(String[] args) throws Exception {
          Date d = new Date();
          Calendar r =Calendar.getInstance();
          r.set(2016,10,1);
-         d.;
-         System.out.println(d);
-         System.out.println(d.getTime());
-//         mm-dd-yyyy
-//         24-May-2005
-                 
-         //String fecha = r.get(Calendar.YEAR)
+//         DD/MON/YY
+          //EstudianteDao e = new EstudianteDao();
+          Estudiantes w= new Estudiantes();
+        System.out.println( new SimpleDateFormat("dd/MM/YYYY").format(r.getTime()));
+          //e.guardarEstudiante(w);
+        // System.out.println();
          System.out.println(r.get(Calendar.MONTH));
-         
     }
 }
