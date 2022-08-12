@@ -17,7 +17,7 @@ public class FrmSecretaria extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,13 +35,13 @@ public class FrmSecretaria extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        txtnombre = new javax.swing.JTextField();
+        txtapellido = new javax.swing.JTextField();
+        txtidentifiacion = new javax.swing.JTextField();
+        txtrepresentante = new javax.swing.JTextField();
+        txtsexo = new javax.swing.JTextField();
+        btnregistar = new javax.swing.JButton();
+        btnmas = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -86,68 +86,68 @@ public class FrmSecretaria extends javax.swing.JFrame {
         jPanel1.add(jLabel8);
         jLabel8.setBounds(20, 250, 90, 20);
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField1KeyTyped(evt);
             }
         });
         jPanel1.add(jTextField1);
         jTextField1.setBounds(210, 90, 100, 20);
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+        txtnombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtnombreKeyTyped(evt);
             }
         });
-        jPanel1.add(jTextField2);
-        jTextField2.setBounds(210, 120, 100, 20);
+        jPanel1.add(txtnombre);
+        txtnombre.setBounds(210, 120, 100, 20);
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+        txtapellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtapellidoKeyTyped(evt);
             }
         });
-        jPanel1.add(jTextField3);
-        jTextField3.setBounds(210, 150, 100, 20);
+        jPanel1.add(txtapellido);
+        txtapellido.setBounds(210, 150, 100, 20);
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+        txtidentifiacion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtidentifiacionKeyTyped(evt);
             }
         });
-        jPanel1.add(jTextField4);
-        jTextField4.setBounds(210, 180, 100, 20);
+        jPanel1.add(txtidentifiacion);
+        txtidentifiacion.setBounds(210, 180, 100, 20);
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+        txtrepresentante.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtrepresentanteKeyTyped(evt);
             }
         });
-        jPanel1.add(jTextField5);
-        jTextField5.setBounds(210, 210, 100, 20);
+        jPanel1.add(txtrepresentante);
+        txtrepresentante.setBounds(210, 210, 100, 20);
 
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+        txtsexo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtsexoKeyTyped(evt);
             }
         });
-        jPanel1.add(jTextField6);
-        jTextField6.setBounds(210, 240, 100, 20);
+        jPanel1.add(txtsexo);
+        txtsexo.setBounds(210, 240, 100, 20);
 
-        jButton1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 51));
-        jButton1.setText("Registrar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnregistar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
+        btnregistar.setForeground(new java.awt.Color(0, 0, 51));
+        btnregistar.setText("Registrar");
+        btnregistar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnregistarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(130, 300, 110, 33);
+        jPanel1.add(btnregistar);
+        btnregistar.setBounds(130, 300, 110, 33);
 
-        jButton2.setText("+");
-        jPanel1.add(jButton2);
-        jButton2.setBounds(330, 220, 40, 23);
+        btnmas.setText("+");
+        jPanel1.add(btnmas);
+        btnmas.setBounds(330, 220, 40, 23);
 
         jLabel4.setFont(new java.awt.Font("Snap ITC", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 153));
@@ -176,33 +176,55 @@ public class FrmSecretaria extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnregistarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregistarActionPerformed
+    String nombre = txtnombre.getText();
+    String apellido = txtapellido.getText();
+    String identificacion = txtidentifiacion.getText();
+    String representante = txtrepresentante.getText();
+    String sexo = txtsexo.getText();
+    }//GEN-LAST:event_btnregistarActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    private void txtidentifiacionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtidentifiacionKeyTyped
+        char c = evt.getKeyChar();
+        if (c < '0' || c > '9') {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtidentifiacionKeyTyped
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
+        char c = evt.getKeyChar();
+        if ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z')) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_jTextField1KeyTyped
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    private void txtnombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnombreKeyTyped
+        char c = evt.getKeyChar();
+        if ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z')) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtnombreKeyTyped
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    private void txtapellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtapellidoKeyTyped
+        char c = evt.getKeyChar();
+        if ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z')) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtapellidoKeyTyped
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    private void txtrepresentanteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtrepresentanteKeyTyped
+        char c = evt.getKeyChar();
+        if ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z')) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtrepresentanteKeyTyped
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    private void txtsexoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtsexoKeyTyped
+        char c = evt.getKeyChar();
+        if ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z')) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtsexoKeyTyped
 
     /**
      * @param args the command line arguments
@@ -240,8 +262,8 @@ public class FrmSecretaria extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnmas;
+    private javax.swing.JButton btnregistar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -252,10 +274,10 @@ public class FrmSecretaria extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField txtapellido;
+    private javax.swing.JTextField txtidentifiacion;
+    private javax.swing.JTextField txtnombre;
+    private javax.swing.JTextField txtrepresentante;
+    private javax.swing.JTextField txtsexo;
     // End of variables declaration//GEN-END:variables
 }

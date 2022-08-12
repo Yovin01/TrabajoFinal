@@ -38,11 +38,11 @@ public class FrmRepresentante extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         txtApellido = new javax.swing.JTextField();
-        txtApellido1 = new javax.swing.JTextField();
-        txtApellido2 = new javax.swing.JTextField();
+        txtIdentificacion = new javax.swing.JTextField();
+        txtCelular = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        txtApellido3 = new javax.swing.JTextField();
-        txtApellido4 = new javax.swing.JTextField();
+        txtCorreo = new javax.swing.JTextField();
+        txtDireccion = new javax.swing.JTextField();
         btnEliminar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
@@ -65,8 +65,19 @@ public class FrmRepresentante extends javax.swing.JFrame {
         jPanel2.setLayout(null);
 
         jButton1.setText("Guardar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jButton1);
         jButton1.setBounds(20, 220, 71, 23);
+
+        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtNombre);
         txtNombre.setBounds(130, 30, 158, 20);
 
@@ -94,27 +105,45 @@ public class FrmRepresentante extends javax.swing.JFrame {
         jLabel5.setText("Correo:");
         jPanel2.add(jLabel5);
         jLabel5.setBounds(20, 150, 70, 17);
+
+        txtApellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtApellidoKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtApellido);
         txtApellido.setBounds(130, 60, 158, 20);
-        jPanel2.add(txtApellido1);
-        txtApellido1.setBounds(130, 90, 158, 20);
-        jPanel2.add(txtApellido2);
-        txtApellido2.setBounds(130, 120, 158, 20);
+
+        txtIdentificacion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtIdentificacionKeyTyped(evt);
+            }
+        });
+        jPanel2.add(txtIdentificacion);
+        txtIdentificacion.setBounds(130, 90, 158, 20);
+
+        txtCelular.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCelularKeyTyped(evt);
+            }
+        });
+        jPanel2.add(txtCelular);
+        txtCelular.setBounds(130, 120, 158, 20);
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel11.setText("Direccion:");
         jPanel2.add(jLabel11);
         jLabel11.setBounds(20, 180, 80, 17);
-        jPanel2.add(txtApellido3);
-        txtApellido3.setBounds(130, 150, 158, 20);
+        jPanel2.add(txtCorreo);
+        txtCorreo.setBounds(130, 150, 158, 20);
 
-        txtApellido4.addActionListener(new java.awt.event.ActionListener() {
+        txtDireccion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtApellido4ActionPerformed(evt);
+                txtDireccionActionPerformed(evt);
             }
         });
-        jPanel2.add(txtApellido4);
-        txtApellido4.setBounds(130, 180, 158, 20);
+        jPanel2.add(txtDireccion);
+        txtDireccion.setBounds(130, 180, 158, 20);
 
         btnEliminar.setBackground(new java.awt.Color(255, 0, 51));
         btnEliminar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -205,9 +234,47 @@ public class FrmRepresentante extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtApellido4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellido4ActionPerformed
+    private void txtDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDireccionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtApellido4ActionPerformed
+    }//GEN-LAST:event_txtDireccionActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+        String correo = txtCorreo.getText();
+        String apellidos = txtApellido.getText();
+        String nombre = txtNombre.getText();
+        String identificacion = txtIdentificacion.getText();
+        String celular = txtCelular.getText();
+        String direccion = txtDireccion.getText();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
+        char c = evt.getKeyChar();
+        if ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z')) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtNombreKeyTyped
+
+    private void txtApellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidoKeyTyped
+        char c = evt.getKeyChar();
+        if ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z')) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtApellidoKeyTyped
+
+    private void txtIdentificacionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdentificacionKeyTyped
+        char c = evt.getKeyChar();
+        if (c < '0' || c > '9') {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtIdentificacionKeyTyped
+
+    private void txtCelularKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCelularKeyTyped
+        char c = evt.getKeyChar();
+        if (c < '0' || c > '9') {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtCelularKeyTyped
 
     /**
      * @param args the command line arguments
@@ -266,11 +333,11 @@ public class FrmRepresentante extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblRepresentante;
     private javax.swing.JTextField txtApellido;
-    private javax.swing.JTextField txtApellido1;
-    private javax.swing.JTextField txtApellido2;
-    private javax.swing.JTextField txtApellido3;
-    private javax.swing.JTextField txtApellido4;
     private javax.swing.JTextField txtBuscar;
+    private javax.swing.JTextField txtCelular;
+    private javax.swing.JTextField txtCorreo;
+    private javax.swing.JTextField txtDireccion;
+    private javax.swing.JTextField txtIdentificacion;
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }
