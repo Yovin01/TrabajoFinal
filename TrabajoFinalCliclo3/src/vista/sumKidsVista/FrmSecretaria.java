@@ -40,7 +40,6 @@ public class FrmSecretaria extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-<<<<<<< HEAD
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
@@ -48,7 +47,6 @@ public class FrmSecretaria extends javax.swing.JFrame {
         jTextField6 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-=======
         jTextField1 = new javax.swing.JTextField();
         txtnombre = new javax.swing.JTextField();
         txtapellido = new javax.swing.JTextField();
@@ -57,7 +55,6 @@ public class FrmSecretaria extends javax.swing.JFrame {
         txtsexo = new javax.swing.JTextField();
         btnregistar = new javax.swing.JButton();
         btnmas = new javax.swing.JButton();
->>>>>>> 2ad47edaa1f431f026c650700434f1260bd1abe1
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -95,8 +92,6 @@ public class FrmSecretaria extends javax.swing.JFrame {
         jLabel8.setText("Sexo:");
         jPanel1.add(jLabel8);
         jLabel8.setBounds(20, 250, 90, 20);
-
-<<<<<<< HEAD
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
@@ -104,7 +99,6 @@ public class FrmSecretaria extends javax.swing.JFrame {
         });
         jPanel1.add(jTextField2);
         jTextField2.setBounds(210, 120, 100, 24);
-=======
         jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextField1KeyTyped(evt);
@@ -120,60 +114,42 @@ public class FrmSecretaria extends javax.swing.JFrame {
         });
         jPanel1.add(txtnombre);
         txtnombre.setBounds(210, 120, 100, 20);
->>>>>>> 2ad47edaa1f431f026c650700434f1260bd1abe1
-
         txtapellido.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtapellidoKeyTyped(evt);
             }
         });
-<<<<<<< HEAD
         jPanel1.add(jTextField3);
         jTextField3.setBounds(210, 150, 100, 24);
-=======
         jPanel1.add(txtapellido);
         txtapellido.setBounds(210, 150, 100, 20);
->>>>>>> 2ad47edaa1f431f026c650700434f1260bd1abe1
-
         txtidentifiacion.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtidentifiacionKeyTyped(evt);
             }
         });
-<<<<<<< HEAD
         jPanel1.add(jTextField4);
         jTextField4.setBounds(210, 180, 100, 24);
-=======
         jPanel1.add(txtidentifiacion);
         txtidentifiacion.setBounds(210, 180, 100, 20);
->>>>>>> 2ad47edaa1f431f026c650700434f1260bd1abe1
-
         txtrepresentante.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtrepresentanteKeyTyped(evt);
             }
         });
-<<<<<<< HEAD
         jPanel1.add(jTextField5);
         jTextField5.setBounds(210, 210, 100, 24);
-=======
         jPanel1.add(txtrepresentante);
         txtrepresentante.setBounds(210, 210, 100, 20);
->>>>>>> 2ad47edaa1f431f026c650700434f1260bd1abe1
-
         txtsexo.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtsexoKeyTyped(evt);
             }
         });
-<<<<<<< HEAD
         jPanel1.add(jTextField6);
         jTextField6.setBounds(210, 240, 100, 24);
-=======
         jPanel1.add(txtsexo);
         txtsexo.setBounds(210, 240, 100, 20);
->>>>>>> 2ad47edaa1f431f026c650700434f1260bd1abe1
-
         btnregistar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
         btnregistar.setForeground(new java.awt.Color(0, 0, 51));
         btnregistar.setText("Registrar");
@@ -182,21 +158,18 @@ public class FrmSecretaria extends javax.swing.JFrame {
                 btnregistarActionPerformed(evt);
             }
         });
-<<<<<<< HEAD
         jPanel1.add(jButton1);
         jButton1.setBounds(130, 290, 110, 32);
 
         jButton2.setText("+");
         jPanel1.add(jButton2);
         jButton2.setBounds(330, 220, 40, 24);
-=======
         jPanel1.add(btnregistar);
         btnregistar.setBounds(130, 300, 110, 33);
 
         btnmas.setText("+");
         jPanel1.add(btnmas);
         btnmas.setBounds(330, 220, 40, 23);
->>>>>>> 2ad47edaa1f431f026c650700434f1260bd1abe1
 
         jLabel4.setFont(new java.awt.Font("Snap ITC", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 153));
@@ -324,19 +297,16 @@ public class FrmSecretaria extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-<<<<<<< HEAD
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
-=======
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField txtapellido;
     private javax.swing.JTextField txtidentifiacion;
     private javax.swing.JTextField txtnombre;
     private javax.swing.JTextField txtrepresentante;
     private javax.swing.JTextField txtsexo;
->>>>>>> 2ad47edaa1f431f026c650700434f1260bd1abe1
     // End of variables declaration//GEN-END:variables
 }
