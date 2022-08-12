@@ -45,8 +45,6 @@ public class FrmSecretaria extends javax.swing.JFrame {
         jTextField4 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         txtnombre = new javax.swing.JTextField();
         txtapellido = new javax.swing.JTextField();
@@ -158,12 +156,6 @@ public class FrmSecretaria extends javax.swing.JFrame {
                 btnregistarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(130, 290, 110, 32);
-
-        jButton2.setText("+");
-        jPanel1.add(jButton2);
-        jButton2.setBounds(330, 220, 40, 24);
         jPanel1.add(btnregistar);
         btnregistar.setBounds(130, 300, 110, 33);
 
