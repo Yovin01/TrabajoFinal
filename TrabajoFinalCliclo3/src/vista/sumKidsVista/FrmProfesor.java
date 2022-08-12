@@ -338,13 +338,13 @@ public class FrmProfesor extends javax.swing.JFrame {
         
         ProfesorDao p = new ProfesorDao();
         try {
-            secretaria.registrar(prof);
+            secretaria.guardarProfesor(prof);
             JOptionPane.showMessageDialog(this, "Creado con exito");
         } catch (Exception ex) {
             Logger.getLogger(FrmProfesor.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(this, "Fallo al crear");
         }
-        tblProfesor.setModel(p.getTableProfesores());
+        //tblProfesor.setModel(p.getTableProfesores());
     }//GEN-LAST:event_btnguardarActionPerformed
 
     /**
