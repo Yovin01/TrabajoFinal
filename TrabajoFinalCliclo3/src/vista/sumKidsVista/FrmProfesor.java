@@ -5,7 +5,7 @@
 package vista.sumKidsVista;
 
 import controlador.conexion.SQLclass;
-import controlador.ctrlSunKidsClub.GerenteDao;
+import controlador.ctrlSunKidsClub.controladorGerente;
 import controlador.dao.ProfesorDao;
 import controlador.ctrlSunKidsClub.controladorSecretaria;
 import java.sql.Connection;
@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import modelo.SumKids.Profesores;
 import modelo.enums.TipoEmpleado;
-import oracle.jdbc.diagnostics.SecuredLogger;
+
 
 /**
  *

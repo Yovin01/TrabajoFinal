@@ -4,20 +4,8 @@
  */
 package controlador.dao;
 
-import controlador.tda.lista.ListaEnlazada;
-import controlador.tda.lista.exception.PosicionException;
-import controlador.utiles.Utilidades;
-import static controlador.utiles.Utilidades.getMethod;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import modelo.SumKids.Representantes;
 
 /**
@@ -55,7 +43,7 @@ public class RepresentanteDao extends AdaptadorDao<Representantes>{
                 return false;
             }
         }
-        
+       
         public void guardarRepresentante(Object dato) throws SQLException{
             Representantes Repre = (Representantes) dato;
         String[] columnas = super.columnas();      
@@ -71,7 +59,7 @@ for (int i = 0; i < columnas.length; i++) {
             }
         }
 
-    comando += "(" + variables + ") values('"+Repre.getCorreo()+" ', ' "+Repre.getApellidos()+" ',' "+Repre.getNombres()+" ',' "+Repre.getIdentificacion()+" ',' "+Repre.getCelular()+" ' , ' "+Repre.getGenero()+" ',' "+Repre.getDireccion()+" ');";
+    comando += "(" + variables + ") values('"+Repre.getCorreo()+"','"+Repre.getApellidos()+"','"+Repre.getNombres()+"','"+Repre.getIdentificacion()+"','"+Repre.getCelular()+"','"+Repre.getGenero()+"','"+Repre.getDireccion()+"');";
             try {
             PreparedStatement stmt = getConexion().prepareStatement(comando);
             stmt.executeUpdate();

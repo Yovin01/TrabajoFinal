@@ -3,18 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package controlador.dao;
-
-import controlador.tda.lista.ListaEnlazada;
-import controlador.utiles.Utilidades;
-import static controlador.utiles.Utilidades.getMethod;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import modelo.SumKids.Factura;
 
 /**
@@ -53,7 +43,8 @@ public class FacturaDao extends AdaptadorDao<Factura> {
                 return false;
             }
         }
-           public void guardarRepresentante(Object dato) throws SQLException {
+        
+           public void guardarFactura(Object dato) throws SQLException {
             Factura fact = (Factura) dato;
         FacturaDao r = new FacturaDao();
         String[] columnas = super.columnas();      
@@ -68,8 +59,7 @@ for (int i = 0; i < columnas.length; i++) {
                 variables += columnas[i] + " , ";
             }
         }
-          
-          comando += "(" + variables + ") values("+r.contar()+","+super.contar()+1+",' "+fact.getPension()+" ',' "+fact.getFecha()+" ' , ' "+fact.getDetalle()+" ',)";
+          comando += "(" + variables + ") values("+r.contar()+","+fact.getId_representante()+",'"+fact.getPension()+"','"+fact.getFecha()+"','"+fact.getDetalle()+"')";
        try {
             PreparedStatement stmt = getConexion().prepareStatement(comando);
             stmt.executeUpdate();
