@@ -13,9 +13,9 @@ import modelo.enums.TipoEmpleado;
  
  */
 public class Profesores extends Empleados {
-    private String especialidad;
-    private Integer id_profesore;
-    private Integer id_empleado;
+    private String especialidad = null;
+    private Integer id_profesore = null;
+    private Integer id_empleado = null;
 
     public Profesores(String especialidad, String nombres, String apellidos, String identificacion, String celular, char Ge, String direccion, TipoEmpleado cargo, String correo) {
         super(nombres, apellidos, identificacion, celular, Ge, direccion, cargo, correo);
@@ -31,6 +31,13 @@ public class Profesores extends Empleados {
       
   }
 
+    public Profesores(Integer id,TipoEmpleado cargo, Integer id_empleado, String correo,  String apellidos, String nombres, String identificacion, String celular, char gene, String direccion, String especailida) {
+        super(cargo, id_empleado, correo, apellidos, nombres, identificacion, celular, gene, direccion);
+          this.especialidad = especailida;
+          this.id_profesore = id;
+    }
+
+   
     public String getEspecialidad() {
         return especialidad;
     }

@@ -23,6 +23,20 @@ public class Empleados extends Persona {
         this.correo = correo;
         this.password = constraseña;
     }
+
+    public Empleados(TipoEmpleado cargo, Integer id_empleado, String correo, String password, String apellidos, String nombres, String identificacion, String celular, char gene, String direccion) {
+        super(apellidos, nombres, identificacion, celular, gene, direccion);
+        this.cargo = cargo;
+        this.id_empleado = id_empleado;
+        this.correo = correo;
+        this.password = password;
+    }
+       public Empleados(TipoEmpleado cargo, Integer id_empleado, String correo, String apellidos, String nombres, String identificacion, String celular, char gene, String direccion) {
+        super(apellidos, nombres, identificacion, celular, gene, direccion);
+        this.cargo = cargo;
+        this.id_empleado = id_empleado;
+        this.correo = correo;
+    }
            public Empleados(String nombres ,  String apellidos  ,   String identificacion,  String celular,char Ge , String direccion ,TipoEmpleado cargo, String correo) {
         super(apellidos, nombres, identificacion,celular, Ge,direccion);
         this.cargo = cargo;
