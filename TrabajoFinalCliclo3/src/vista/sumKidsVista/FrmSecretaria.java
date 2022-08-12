@@ -17,7 +17,14 @@ public class FrmSecretaria extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
     }
-    
+    public void limpiar() {
+        
+        txtapellido.setText("");
+        txtnombre.setText("");
+        txtidentifiacion.setText("");
+        txtrepresentante.setText("");
+        txtsexo.setText("");
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -182,6 +189,8 @@ public class FrmSecretaria extends javax.swing.JFrame {
     String identificacion = txtidentifiacion.getText();
     String representante = txtrepresentante.getText();
     String sexo = txtsexo.getText();
+    
+    limpiar();
     }//GEN-LAST:event_btnregistarActionPerformed
 
     private void txtidentifiacionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtidentifiacionKeyTyped

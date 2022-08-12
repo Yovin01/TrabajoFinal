@@ -19,6 +19,15 @@ public class FrmRepresentante extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
 
+    public void limpiar() {
+        txtCorreo.setText("");
+        txtApellido.setText("");
+        txtNombre.setText("");
+        txtIdentificacion.setText("");
+        txtCelular.setText("");
+        txtDireccion.setText("");
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -162,6 +171,11 @@ public class FrmRepresentante extends javax.swing.JFrame {
         btnCancelar.setBackground(new java.awt.Color(255, 255, 255));
         btnCancelar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnCancelar);
         btnCancelar.setBounds(320, 220, 83, 23);
 
@@ -239,13 +253,14 @@ public class FrmRepresentante extends javax.swing.JFrame {
     }//GEN-LAST:event_txtDireccionActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+
         String correo = txtCorreo.getText();
         String apellidos = txtApellido.getText();
         String nombre = txtNombre.getText();
         String identificacion = txtIdentificacion.getText();
         String celular = txtCelular.getText();
         String direccion = txtDireccion.getText();
+        limpiar();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
@@ -275,6 +290,10 @@ public class FrmRepresentante extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_txtCelularKeyTyped
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        limpiar();
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
     /**
      * @param args the command line arguments
