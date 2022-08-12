@@ -5,6 +5,8 @@
  */
 package vista.sumKidsVista;
 
+import modelo.SumKids.Representantes;
+
 /**
  *
  * @author Det-Pc
@@ -261,6 +263,7 @@ public class FrmRepresentante extends javax.swing.JFrame {
         String celular = txtCelular.getText();
         String direccion = txtDireccion.getText();
         limpiar();
+        Representantes r = new Representantes(correo, apellidos, nombre, identificacion, celular, 'm', direccion);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped

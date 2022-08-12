@@ -94,7 +94,7 @@ public class FrmRegistro extends javax.swing.JFrame {
     }//GEN-LAST:event_btnProfesorActionPerformed
 
     private void btnEstudianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstudianteActionPerformed
-        new FrmSecretaria().setVisible(true);
+        //new FrmSecretaria().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnEstudianteActionPerformed
 
