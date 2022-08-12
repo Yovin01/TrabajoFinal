@@ -29,6 +29,16 @@ public class FrmProfesor extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
 
+    public void limpiar() {
+        txtEspecialidad.setText("");
+        txtCorreo.setText("");
+        txtApellido.setText("");
+        txtNombre.setText("");
+        txtIdentificacion.setText("");
+        txtCelular.setText("");
+        txtDireccion.setText("");
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -316,7 +326,7 @@ public class FrmProfesor extends javax.swing.JFrame {
         String identificacion = txtIdentificacion.getText();
         String celular = txtCelular.getText();
         String direccion = txtDireccion.getText();
-
+        limpiar();
 //        Profesores prof = new Profesores( especialidad
 //        ,  m,  correo,  apellidos
 //        ,  nombre,  identificacion
