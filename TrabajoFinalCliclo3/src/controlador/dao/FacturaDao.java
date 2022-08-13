@@ -5,6 +5,7 @@
 package controlador.dao;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 import modelo.SumKids.Factura;
 
 /**
@@ -63,6 +64,7 @@ for (int i = 0; i < columnas.length; i++) {
        try {
             PreparedStatement stmt = getConexion().prepareStatement(comando);
             stmt.executeUpdate();
+            JOptionPane.showMessageDialog(null, "guardado correctamente");
         } catch (Exception ex) {
             System.out.println("Error en guardar " + ex);
         }

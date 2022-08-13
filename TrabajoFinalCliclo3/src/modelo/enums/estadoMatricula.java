@@ -11,5 +11,5 @@ package modelo.enums;
  * @author Jordy
  */
 public enum estadoMatricula {
-    aprobado,rechazado;
+    aprobado,rechazado,espera;
 }

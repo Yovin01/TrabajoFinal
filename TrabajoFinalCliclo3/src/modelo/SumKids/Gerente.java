@@ -11,7 +11,7 @@ import modelo.enums.TipoEmpleado;
  * @author Jordy torres
  */
 public class Gerente extends Empleados{
-    
+   
     public Gerente(){
         
     }
