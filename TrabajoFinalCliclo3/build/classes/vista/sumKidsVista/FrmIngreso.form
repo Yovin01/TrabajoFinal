@@ -117,7 +117,12 @@
               <Color blue="0" green="66" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Ingresar"/>
+<<<<<<< HEAD
             <Property name="alignmentY" type="float" value="0.9"/>
+=======
+            <Property name="alignmentY" type="float" value="0.0"/>
+            <Property name="iconTextGap" type="int" value="2"/>
+>>>>>>> 864d4ad234987476f04eb17ab89fd41b9dc376a5
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>

@@ -14,6 +14,7 @@ import javax.swing.table.DefaultTableModel;
 import modelo.SumKids.Profesores;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 import modelo.SumKids.Empleados;
 import modelo.enums.TipoEmpleado;
 
@@ -78,6 +79,7 @@ for (int i = 0; i < columnas.length; i++) {
             try {
             PreparedStatement stmt = getConexion().prepareStatement(comando);
             stmt.executeUpdate();
+            JOptionPane.showMessageDialog(null, "guardado correctamente");
         } catch (SQLException ex) {
             System.out.println("Error en guardar " + ex);
         }
