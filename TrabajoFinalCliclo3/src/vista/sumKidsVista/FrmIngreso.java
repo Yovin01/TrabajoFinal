@@ -4,6 +4,8 @@
  */
 package vista.sumKidsVista;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Yovin
@@ -41,11 +43,6 @@ public class FrmIngreso extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         txtusuario.setBackground(new java.awt.Color(204, 204, 255));
-        txtusuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtusuarioActionPerformed(evt);
-            }
-        });
         jPanel1.add(txtusuario);
         txtusuario.setBounds(350, 190, 120, 30);
 
@@ -61,11 +58,6 @@ public class FrmIngreso extends javax.swing.JFrame {
         jLabel2.setBounds(270, 10, 210, 160);
 
         pswcontraseña.setBackground(new java.awt.Color(204, 204, 255));
-        pswcontraseña.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pswcontraseñaActionPerformed(evt);
-            }
-        });
         jPanel1.add(pswcontraseña);
         pswcontraseña.setBounds(350, 230, 120, 30);
 
@@ -78,6 +70,11 @@ public class FrmIngreso extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Palatino Linotype", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 102, 0));
         jButton1.setText("Ingresar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton1);
         jButton1.setBounds(310, 280, 110, 35);
 
@@ -100,15 +97,23 @@ public class FrmIngreso extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void pswcontraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pswcontraseñaActionPerformed
-
-        
-        
-    }//GEN-LAST:event_pswcontraseñaActionPerformed
-
-    private void txtusuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtusuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtusuarioActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String cg = "claveg";
+        String ug = "usg";
+        String cs = "claves";
+        String us = "uss";
+        if (txtusuario.getText().equals(ug) && pswcontraseña.getText().equals(cg)) {
+            new FrmGerente().setVisible(true);
+            this.setVisible(false);
+        } else {
+            if (txtusuario.getText().equals(us)&& pswcontraseña.getText().equals(cs)) {
+                new FrmEstudiante().setVisible(true);
+                this.setVisible(false);
+            }else{
+            JOptionPane.showMessageDialog(this, "Clave o usuario Inconrrecta");
+            }
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

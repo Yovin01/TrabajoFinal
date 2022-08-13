@@ -57,6 +57,7 @@ public class FrmRepresentante extends javax.swing.JFrame {
         btnEliminar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
+        btnAtras = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
@@ -182,6 +183,16 @@ public class FrmRepresentante extends javax.swing.JFrame {
         jPanel2.add(btnCancelar);
         btnCancelar.setBounds(340, 210, 100, 30);
 
+        btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/door.png"))); // NOI18N
+        btnAtras.setText("Atrás");
+        btnAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnAtras);
+        btnAtras.setBounds(340, 150, 90, 25);
+
         jPanel1.add(jPanel2);
         jPanel2.setBounds(20, 50, 460, 260);
 
@@ -237,9 +248,8 @@ public class FrmRepresentante extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -300,6 +310,11 @@ public class FrmRepresentante extends javax.swing.JFrame {
         limpiar();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
+    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
+        new FrmEstudiante().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnAtrasActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -337,6 +352,7 @@ public class FrmRepresentante extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEliminar;

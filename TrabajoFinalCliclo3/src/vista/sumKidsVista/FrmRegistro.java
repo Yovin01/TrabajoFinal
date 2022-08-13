@@ -32,6 +32,7 @@ public class FrmRegistro extends javax.swing.JFrame {
         btnProfesor = new javax.swing.JButton();
         btnEstudiante = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        btnAtras = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         jLabel4.setBackground(new java.awt.Color(255, 51, 51));
@@ -68,9 +69,19 @@ public class FrmRegistro extends javax.swing.JFrame {
         jPanel1.add(jLabel5);
         jLabel5.setBounds(30, 10, 249, 32);
 
+        btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/door.png"))); // NOI18N
+        btnAtras.setText("Atrás");
+        btnAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnAtras);
+        btnAtras.setBounds(180, 150, 130, 25);
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/fondo.jpg"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 330, 180);
+        jLabel1.setBounds(0, 0, 330, 190);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -82,7 +93,7 @@ public class FrmRegistro extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
         );
 
         pack();
@@ -94,9 +105,14 @@ public class FrmRegistro extends javax.swing.JFrame {
     }//GEN-LAST:event_btnProfesorActionPerformed
 
     private void btnEstudianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstudianteActionPerformed
-        //new FrmSecretaria().setVisible(true);
+        new FrmEstudiante().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnEstudianteActionPerformed
+
+    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
+        new FrmIngreso().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnAtrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -134,6 +150,7 @@ public class FrmRegistro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnEstudiante;
     private javax.swing.JButton btnProfesor;
     private javax.swing.JLabel jLabel1;

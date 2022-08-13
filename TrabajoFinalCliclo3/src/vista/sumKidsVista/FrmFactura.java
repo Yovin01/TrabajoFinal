@@ -53,6 +53,7 @@ public class FrmFactura extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         txtpension = new javax.swing.JTextField();
+        btnAtras = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -187,6 +188,16 @@ public class FrmFactura extends javax.swing.JFrame {
         jPanel3.add(txtpension);
         txtpension.setBounds(90, 310, 70, 20);
 
+        btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/door.png"))); // NOI18N
+        btnAtras.setText("Atrás");
+        btnAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnAtras);
+        btnAtras.setBounds(250, 310, 90, 25);
+
         jPanel1.add(jPanel3);
         jPanel3.setBounds(0, 170, 440, 360);
 
@@ -214,6 +225,11 @@ public class FrmFactura extends javax.swing.JFrame {
     private void txtnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtnombreActionPerformed
+
+    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
+        new FrmRepresentante().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnAtrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -251,6 +267,7 @@ public class FrmFactura extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAtras;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

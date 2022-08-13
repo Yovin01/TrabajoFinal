@@ -53,6 +53,7 @@ public class FrmEstudiante extends javax.swing.JFrame {
         cbxHorario = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        btnAtras = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -187,8 +188,18 @@ public class FrmEstudiante extends javax.swing.JFrame {
         jPanel2.add(jLabel10);
         jLabel10.setBounds(30, 250, 90, 40);
 
+        btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/door.png"))); // NOI18N
+        btnAtras.setText("Atrás");
+        btnAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnAtras);
+        btnAtras.setBounds(420, 240, 90, 25);
+
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(10, 10, 500, 300);
+        jPanel2.setBounds(10, 10, 520, 300);
 
         jPanel4.add(jPanel1);
         jPanel1.setBounds(10, 100, 540, 320);
@@ -242,6 +253,11 @@ public class FrmEstudiante extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tbnEscogerActionPerformed
 
+    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
+        new FrmRegistro().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnAtrasActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -278,6 +294,7 @@ public class FrmEstudiante extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAtras;
     private javax.swing.JComboBox<String> cbxHorario;
     private javax.swing.JComboBox<String> cbxMateria;
     private javax.swing.JButton cmdActualizar;

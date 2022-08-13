@@ -36,6 +36,7 @@ public class FrmMetodosRepresentante extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        btnAtras = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
@@ -51,11 +52,11 @@ public class FrmMetodosRepresentante extends javax.swing.JFrame {
 
         jButton1.setText("Buscar");
         jPanel1.add(jButton1);
-        jButton1.setBounds(180, 40, 80, 23);
+        jButton1.setBounds(170, 40, 80, 23);
 
         jButton2.setText("Agregar");
         jPanel1.add(jButton2);
-        jButton2.setBounds(280, 40, 80, 23);
+        jButton2.setBounds(270, 40, 80, 23);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2.setLayout(null);
@@ -74,13 +75,23 @@ public class FrmMetodosRepresentante extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         jPanel2.add(jScrollPane1);
-        jScrollPane1.setBounds(40, 20, 297, 120);
+        jScrollPane1.setBounds(40, 20, 350, 120);
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(20, 80, 380, 160);
+        jPanel2.setBounds(20, 80, 410, 160);
+
+        btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/door.png"))); // NOI18N
+        btnAtras.setText("Atrás");
+        btnAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnAtras);
+        btnAtras.setBounds(360, 40, 90, 25);
 
         jPanel3.add(jPanel1);
-        jPanel1.setBounds(10, 20, 440, 255);
+        jPanel1.setBounds(10, 20, 470, 255);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/fondosd.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
@@ -100,6 +111,11 @@ public class FrmMetodosRepresentante extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
+        new FrmGerente().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnAtrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -138,6 +154,7 @@ public class FrmMetodosRepresentante extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAtras;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
