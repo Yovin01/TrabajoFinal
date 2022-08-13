@@ -107,7 +107,7 @@ public class FrmIngreso extends javax.swing.JFrame {
             this.setVisible(false);
         } else {
             if (txtusuario.getText().equals(us)&& pswcontraseña.getText().equals(cs)) {
-                new FrmEstudiante().setVisible(true);
+                new FrmRegistro().setVisible(true);
                 this.setVisible(false);
             }else{
             JOptionPane.showMessageDialog(this, "Clave o usuario Inconrrecta");
