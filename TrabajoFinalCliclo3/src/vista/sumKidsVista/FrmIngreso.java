@@ -71,24 +71,17 @@ public class FrmIngreso extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 102, 0));
         jButton1.setText("Ingresar");
-<<<<<<< HEAD
         jButton1.setAlignmentY(0.9F);
-=======
         jButton1.setAlignmentY(0.0F);
         jButton1.setIconTextGap(2);
->>>>>>> 864d4ad234987476f04eb17ab89fd41b9dc376a5
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton1);
-<<<<<<< HEAD
-        jButton1.setBounds(310, 280, 110, 31);
-=======
-        jButton1.setBounds(310, 280, 110, 34);
->>>>>>> 864d4ad234987476f04eb17ab89fd41b9dc376a5
 
+        jButton1.setBounds(310, 280, 110, 34);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/1939.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
         jPanel1.add(jLabel1);
