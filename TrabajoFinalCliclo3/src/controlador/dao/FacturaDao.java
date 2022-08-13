@@ -71,5 +71,6 @@ for (int i = 0; i < columnas.length; i++) {
         System.out.println(comando);
         commit();
         }
+           
 }
 

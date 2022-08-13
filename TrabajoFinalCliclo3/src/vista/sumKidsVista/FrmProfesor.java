@@ -72,6 +72,7 @@ public class FrmProfesor extends javax.swing.JFrame {
         btnCancelar = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         txtEspecialidad = new javax.swing.JTextField();
+        btnAtras = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblProfesor = new javax.swing.JTable();
@@ -214,6 +215,16 @@ public class FrmProfesor extends javax.swing.JFrame {
         jPanel2.add(txtEspecialidad);
         txtEspecialidad.setBounds(130, 270, 158, 30);
 
+        btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/door.png"))); // NOI18N
+        btnAtras.setText("Atrás");
+        btnAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnAtras);
+        btnAtras.setBounds(320, 40, 90, 25);
+
         jPanel1.add(jPanel2);
         jPanel2.setBounds(50, 60, 430, 330);
 
@@ -264,13 +275,13 @@ public class FrmProfesor extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 552, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -338,14 +349,26 @@ public class FrmProfesor extends javax.swing.JFrame {
         
         ProfesorDao p = new ProfesorDao();
         try {
+            //secretaria.guardarProfesor(prof);
+
          //   secretaria.registrar(prof);
+
             JOptionPane.showMessageDialog(this, "Creado con exito");
         } catch (Exception ex) {
             Logger.getLogger(FrmProfesor.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(this, "Fallo al crear");
         }
+
+        //tblProfesor.setModel(p.getTableProfesores());
+
        // tblProfesor.setModel(p.getTableProfesores());
+
     }//GEN-LAST:event_btnguardarActionPerformed
+
+    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
+        new FrmRegistro().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnAtrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -383,6 +406,7 @@ public class FrmProfesor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEliminar;

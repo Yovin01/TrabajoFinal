@@ -46,6 +46,17 @@ public class FrmEstudiante extends javax.swing.JFrame {
         cmdNuevo = new javax.swing.JButton();
         cmdEliminar = new javax.swing.JButton();
         txtFono = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        txtRepresentante = new javax.swing.JTextField();
+        tbnEscoger = new javax.swing.JButton();
+        cbxMateria = new javax.swing.JComboBox<>();
+        cbxHorario = new javax.swing.JComboBox<>();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        btnAtras = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
@@ -91,7 +102,7 @@ public class FrmEstudiante extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Dirección:");
         jPanel2.add(jLabel4);
-        jLabel4.setBounds(10, 120, 100, 40);
+        jLabel4.setBounds(10, 130, 100, 40);
 
         txtDireccion.setPreferredSize(new java.awt.Dimension(160, 20));
         jPanel2.add(txtDireccion);
@@ -100,7 +111,7 @@ public class FrmEstudiante extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setText("Sexo:");
         jPanel2.add(jLabel5);
-        jLabel5.setBounds(10, 160, 100, 40);
+        jLabel5.setBounds(10, 170, 100, 40);
 
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
         jPanel3.setOpaque(false);
@@ -141,11 +152,79 @@ public class FrmEstudiante extends javax.swing.JFrame {
         jPanel2.add(txtFono);
         txtFono.setBounds(120, 170, 160, 30);
 
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel8.setText("Horario:");
+        jPanel2.add(jLabel8);
+        jLabel8.setBounds(230, 250, 90, 40);
+
+        txtRepresentante.setPreferredSize(new java.awt.Dimension(90, 20));
+        jPanel2.add(txtRepresentante);
+        txtRepresentante.setBounds(120, 210, 160, 30);
+
+        tbnEscoger.setText("Escoger");
+        tbnEscoger.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbnEscogerActionPerformed(evt);
+            }
+        });
+        jPanel2.add(tbnEscoger);
+        tbnEscoger.setBounds(320, 210, 80, 30);
+
+        cbxMateria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ingles", "Matematica", "EstimilacionT" }));
+        jPanel2.add(cbxMateria);
+        cbxMateria.setBounds(130, 260, 80, 30);
+
+        cbxHorario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2", "3", "5" }));
+        jPanel2.add(cbxHorario);
+        cbxHorario.setBounds(320, 260, 80, 30);
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel9.setText("Representante:");
+        jPanel2.add(jLabel9);
+        jLabel9.setBounds(10, 210, 120, 40);
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel10.setText("Materia:");
+        jPanel2.add(jLabel10);
+        jLabel10.setBounds(30, 250, 90, 40);
+
+        btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/door.png"))); // NOI18N
+        btnAtras.setText("Atrás");
+        btnAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnAtras);
+        btnAtras.setBounds(420, 240, 90, 25);
+
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(10, 10, 500, 220);
+        jPanel2.setBounds(10, 10, 520, 300);
 
         jPanel4.add(jPanel1);
-        jPanel1.setBounds(10, 100, 540, 240);
+        jPanel1.setBounds(10, 100, 540, 320);
+
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3), "Estudiantes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
+        jPanel5.setLayout(null);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jPanel5.add(jScrollPane1);
+        jScrollPane1.setBounds(17, 38, 474, 114);
+
+        jPanel4.add(jPanel5);
+        jPanel5.setBounds(20, 440, 520, 170);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/Logo (1).jpg"))); // NOI18N
         jPanel4.add(jLabel6);
@@ -154,7 +233,7 @@ public class FrmEstudiante extends javax.swing.JFrame {
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/1939.jpg"))); // NOI18N
         jLabel7.setOpaque(true);
         jPanel4.add(jLabel7);
-        jLabel7.setBounds(0, 0, 600, 590);
+        jLabel7.setBounds(0, 0, 600, 640);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -164,11 +243,20 @@ public class FrmEstudiante extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 589, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 644, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tbnEscogerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbnEscogerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tbnEscogerActionPerformed
+
+    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
+        new FrmRegistro().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnAtrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -206,25 +294,36 @@ public class FrmEstudiante extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAtras;
+    private javax.swing.JComboBox<String> cbxHorario;
+    private javax.swing.JComboBox<String> cbxMateria;
     private javax.swing.JButton cmdActualizar;
     private javax.swing.JButton cmdAgregar;
     private javax.swing.JButton cmdEliminar;
     private javax.swing.JButton cmdNuevo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JButton tbnEscoger;
     private javax.swing.JTextField txtDireccion;
     private javax.swing.JTextField txtFono;
     private javax.swing.JTextField txtMaterno;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtPaterno;
+    private javax.swing.JTextField txtRepresentante;
     // End of variables declaration//GEN-END:variables
 }
