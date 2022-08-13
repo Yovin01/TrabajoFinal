@@ -50,14 +50,7 @@ public class controladorGerente extends AdaptadorDao<Gerente> {
         while (re.next()) {
             a = (Integer) re.getInt(1);
         }
-<<<<<<< HEAD
-     
-     
-     
-     
-     
-     
-=======
+
         PreparedStatement stmt2 = getConexion().prepareStatement(comando + (a + 1) + "," + id_est + "," + id_Pof);
         stmt2.executeUpdate();
     }
@@ -76,5 +69,4 @@ public class controladorGerente extends AdaptadorDao<Gerente> {
         }
     }
 
->>>>>>> 661cf78ff709771a06c3b0aeeab82c86707193da
 }

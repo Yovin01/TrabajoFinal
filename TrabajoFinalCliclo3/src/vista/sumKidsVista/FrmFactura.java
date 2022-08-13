@@ -4,6 +4,9 @@
  */
 package vista.sumKidsVista;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 /**
  *
  * @author User
@@ -16,6 +19,8 @@ public class FrmFactura extends javax.swing.JFrame {
     public FrmFactura() {
         initComponents();
         this.setLocationRelativeTo(null);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        lbl_fecha.setText(dateFormat.format(Calendar.getInstance().getTime()));
     }
 
     /**
@@ -54,6 +59,7 @@ public class FrmFactura extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         txtpension = new javax.swing.JTextField();
         btnAtras = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -88,9 +94,9 @@ public class FrmFactura extends javax.swing.JFrame {
         jPanel2.add(jLabel2);
         jLabel2.setBounds(220, 30, 60, 20);
 
-        lbl_fecha.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+        lbl_fecha.setFont(new java.awt.Font("Cambria", 0, 12)); // NOI18N
         jPanel2.add(lbl_fecha);
-        lbl_fecha.setBounds(290, 30, 100, 20);
+        lbl_fecha.setBounds(290, 30, 120, 20);
 
         lblid_factura.setForeground(new java.awt.Color(255, 0, 0));
         jPanel2.add(lblid_factura);
@@ -153,12 +159,10 @@ public class FrmFactura extends javax.swing.JFrame {
         txtdireccion.setEditable(false);
         jPanel3.add(txtdireccion);
         txtdireccion.setBounds(270, 70, 98, 20);
-
-        txtidentificacion.setEditable(false);
         jPanel3.add(txtidentificacion);
         txtidentificacion.setBounds(120, 110, 115, 20);
         jPanel3.add(txtdetalle);
-        txtdetalle.setBounds(90, 140, 290, 20);
+        txtdetalle.setBounds(90, 140, 290, 30);
 
         tbl_datosfactura.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -184,10 +188,11 @@ public class FrmFactura extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setText("+");
         jPanel3.add(jButton1);
-        jButton1.setBounds(380, 40, 50, 25);
+        jButton1.setBounds(270, 110, 50, 25);
         jPanel3.add(txtpension);
         txtpension.setBounds(90, 310, 70, 20);
 
+        btnAtras.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/door.png"))); // NOI18N
         btnAtras.setText("Atrás");
         btnAtras.addActionListener(new java.awt.event.ActionListener() {
@@ -196,7 +201,12 @@ public class FrmFactura extends javax.swing.JFrame {
             }
         });
         jPanel3.add(btnAtras);
-        btnAtras.setBounds(250, 310, 90, 25);
+        btnAtras.setBounds(330, 310, 90, 25);
+
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton2.setText("Facturar");
+        jPanel3.add(jButton2);
+        jButton2.setBounds(200, 310, 90, 23);
 
         jPanel1.add(jPanel3);
         jPanel3.setBounds(0, 170, 440, 360);
@@ -269,6 +279,7 @@ public class FrmFactura extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtras;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

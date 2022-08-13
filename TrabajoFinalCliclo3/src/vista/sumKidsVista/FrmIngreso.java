@@ -17,6 +17,7 @@ public class FrmIngreso extends javax.swing.JFrame {
      */
     public FrmIngreso() {
         initComponents();
+        this.setTitle("Login");
         this.setLocationRelativeTo(null);
     }
 
@@ -67,16 +68,17 @@ public class FrmIngreso extends javax.swing.JFrame {
         jPanel1.add(jLabel4);
         jLabel4.setBounds(230, 230, 130, 30);
 
-        jButton1.setFont(new java.awt.Font("Palatino Linotype", 1, 18)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 102, 0));
         jButton1.setText("Ingresar");
+        jButton1.setAlignmentY(0.9F);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(310, 280, 110, 35);
+        jButton1.setBounds(310, 280, 110, 31);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/1939.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -102,17 +104,27 @@ public class FrmIngreso extends javax.swing.JFrame {
         String ug = "usg";
         String cs = "claves";
         String us = "uss";
-        if (txtusuario.getText().equals(ug) && pswcontraseña.getText().equals(cg)) {
-            new FrmGerente().setVisible(true);
-            this.setVisible(false);
-        } else {
-            if (txtusuario.getText().equals(us)&& pswcontraseña.getText().equals(cs)) {
-                new FrmRegistro().setVisible(true);
-                this.setVisible(false);
-            }else{
-            JOptionPane.showMessageDialog(this, "Clave o usuario Inconrrecta");
+        try {
+            if (!txtusuario.getText().trim().isEmpty() && !pswcontraseña.getText().trim().isEmpty()) {
+                if (txtusuario.getText().equals(ug) && pswcontraseña.getText().equals(cg)) {
+                    new FrmGerente().setVisible(true);
+                    this.setVisible(false);
+                } else {
+                    if (txtusuario.getText().equals(us) && pswcontraseña.getText().equals(cs)) {
+                        new FrmRegistro().setVisible(true);
+                        this.setVisible(false);
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Clave o usuario Inconrrecta");
+                    }
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "Campos Vacios", "ERROR", JOptionPane.ERROR_MESSAGE);
             }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.toString(), "ERROR", JOptionPane.ERROR_MESSAGE);
         }
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

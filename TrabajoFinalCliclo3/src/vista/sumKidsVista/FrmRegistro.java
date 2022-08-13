@@ -33,6 +33,7 @@ public class FrmRegistro extends javax.swing.JFrame {
         btnEstudiante = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         btnAtras = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         jLabel4.setBackground(new java.awt.Color(255, 51, 51));
@@ -44,6 +45,7 @@ public class FrmRegistro extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         btnProfesor.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+        btnProfesor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/new.png"))); // NOI18N
         btnProfesor.setText("Registrar Profesor");
         btnProfesor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -51,9 +53,10 @@ public class FrmRegistro extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnProfesor);
-        btnProfesor.setBounds(60, 70, 190, 23);
+        btnProfesor.setBounds(100, 70, 190, 30);
 
         btnEstudiante.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+        btnEstudiante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/new.png"))); // NOI18N
         btnEstudiante.setText("Registrar Estudiante");
         btnEstudiante.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,14 +64,17 @@ public class FrmRegistro extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnEstudiante);
-        btnEstudiante.setBounds(60, 110, 190, 27);
+        btnEstudiante.setBounds(100, 120, 190, 30);
 
         jLabel5.setBackground(new java.awt.Color(255, 51, 51));
         jLabel5.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Registro de Información");
+        jLabel5.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.white, java.awt.Color.darkGray));
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(30, 10, 249, 32);
+        jLabel5.setBounds(70, 10, 253, 36);
 
+        btnAtras.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/door.png"))); // NOI18N
         btnAtras.setText("Atrás");
         btnAtras.addActionListener(new java.awt.event.ActionListener() {
@@ -77,23 +83,25 @@ public class FrmRegistro extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnAtras);
-        btnAtras.setBounds(180, 150, 130, 25);
+        btnAtras.setBounds(300, 230, 130, 25);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/fondo.jpg"))); // NOI18N
+        jButton1.setText("Facturar");
+        jPanel1.add(jButton1);
+        jButton1.setBounds(100, 180, 190, 23);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/screen3.jpg"))); // NOI18N
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 330, 190);
+        jLabel1.setBounds(0, 0, 450, 270);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 494, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE)
         );
 
         pack();
@@ -153,6 +161,7 @@ public class FrmRegistro extends javax.swing.JFrame {
     private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnEstudiante;
     private javax.swing.JButton btnProfesor;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
